@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKHO" Class="DataDemoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-D5CHB5F;Initial Catalog=QLKHO;Integrated Security=True" SettingsObjectName="QLDACNTT_QUANLYKHO.Properties.Settings" SettingsPropertyName="QLKHO_ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BOPHAN" Member="BOPHANs">
+    <Type Name="BOPHAN">
+      <Column Name="idbophan" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenbophan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="congviecbophan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idnhansu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="NHANSU_BOPHAN" Member="NHANSU" ThisKey="idnhansu" OtherKey="idnhansu" Type="NHANSU" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHO" Member="KHOs">
+    <Type Name="KHO">
+      <Column Name="idkho" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenkho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="vitrikho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="KHO_NHAPKHO" Member="NHAPKHOs" ThisKey="idkho" OtherKey="idkho" Type="NHAPKHO" />
+      <Association Name="KHO_XUATKHO" Member="XUATKHOs" ThisKey="idkho" OtherKey="idkho" Type="XUATKHO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KIEMKE" Member="KIEMKEs">
+    <Type Name="KIEMKE">
+      <Column Name="idphieukiemke" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ngaykiemke" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="soluongtonkho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idnhansu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NHANSU_KIEMKE" Member="NHANSU" ThisKey="idnhansu" OtherKey="idnhansu" Type="NHANSU" IsForeignKey="true" />
+      <Association Name="SANPHAM_KIEMKE" Member="SANPHAM" ThisKey="idsanpham" OtherKey="idsanpham" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHANSU" Member="NHANSUs">
+    <Type Name="NHANSU">
+      <Column Name="idnhansu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tennhansu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="chucvu" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="dienthoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngayvaolam" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="NHANSU_BOPHAN" Member="BOPHANs" ThisKey="idnhansu" OtherKey="idnhansu" Type="BOPHAN" />
+      <Association Name="NHANSU_KIEMKE" Member="KIEMKEs" ThisKey="idnhansu" OtherKey="idnhansu" Type="KIEMKE" />
+      <Association Name="NHANSU_NHAPKHO" Member="NHAPKHOs" ThisKey="idnhansu" OtherKey="idnhansu" Type="NHAPKHO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHAPKHO" Member="NHAPKHOs">
+    <Type Name="NHAPKHO">
+      <Column Name="idphieunhap" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ngaynhapkho" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="soluongnhap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idnhansu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idnhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idkho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NHANSU_NHAPKHO" Member="NHANSU" ThisKey="idnhansu" OtherKey="idnhansu" Type="NHANSU" IsForeignKey="true" />
+      <Association Name="KHO_NHAPKHO" Member="KHO" ThisKey="idkho" OtherKey="idkho" Type="KHO" IsForeignKey="true" />
+      <Association Name="PROVIDER_NHAPKHO" Member="PROVIDER" ThisKey="idnhacungcap" OtherKey="idnhacungcap" Type="PROVIDER" IsForeignKey="true" />
+      <Association Name="SANPHAM_NHAPKHO" Member="SANPHAM" ThisKey="idsanpham" OtherKey="idsanpham" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROVIDER" Member="PROVIDERs">
+    <Type Name="PROVIDER">
+      <Column Name="idnhacungcap" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tennhacungcap" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="diachinhacungcap" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtnhacungcap" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
+      <Association Name="PROVIDER_NHAPKHO" Member="NHAPKHOs" ThisKey="idnhacungcap" OtherKey="idnhacungcap" Type="NHAPKHO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANPHAM" Member="SANPHAMs">
+    <Type Name="SANPHAM">
+      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tensanpham" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="donvi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="loaisanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nhomsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dongia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nhacungcap" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="SANPHAM_KIEMKE" Member="KIEMKEs" ThisKey="idsanpham" OtherKey="idsanpham" Type="KIEMKE" />
+      <Association Name="SANPHAM_NHAPKHO" Member="NHAPKHOs" ThisKey="idsanpham" OtherKey="idsanpham" Type="NHAPKHO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XUATKHO" Member="XUATKHOs">
+    <Type Name="XUATKHO">
+      <Column Name="idphieuxuat" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ngayxuatkho" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="soluongxuat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idkho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idnhansu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="KHO_XUATKHO" Member="KHO" ThisKey="idkho" OtherKey="idkho" Type="KHO" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
