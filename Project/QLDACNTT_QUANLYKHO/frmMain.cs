@@ -30,7 +30,7 @@ namespace QLDACNTT_QUANLYKHO
         #region Methods for form
         public void loadData()
         {
-            this.gcData_Main.DataSource = func.GetKho();
+            this.gcData_Main.DataSource = func.Get_SanPham();
         }
 
         #endregion

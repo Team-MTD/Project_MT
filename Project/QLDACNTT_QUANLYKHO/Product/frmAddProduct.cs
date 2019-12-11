@@ -60,43 +60,53 @@ namespace QLDACNTT_QUANLYKHO
         {
             if (txtAdd_nameProduct.Text != "" && txtAdd_idProduct.Text != "" && txtAdd_priceProduct.Text != "")
             {
-                var product = new Product()
+                try
                 {
-                    IdSanPham = txtAdd_idProduct.Text,
-                    TenSanPham = txtAdd_nameProduct.Text,
-                    DonVi = txtAdd_unitProduct.Text,
-                    DonGia = Convert.ToInt32(txtAdd_priceProduct.Text),
-                    LoaiSanPham = txtAdd_SpeciesProduct.Text,
-                    NhaCungCap = txtAdd_providerProduct.Text,
-                    NhomSanPham = txtAdd_groupProduct.Text
-                };
-
-                // Kiểm tra nếu sản phẩm tồn tại:
-                if (func.TimKiemSanPham(product.IdSanPham)==null)
-                {
-                    // Cập nhật sản phẩm
-                    if (func.UpdateSanPham(product))
+                    var product = new Product()
                     {
-                        XtraMessageBox.Show("Cập nhật sản phẩm thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        IdSanPham = txtAdd_idProduct.Text,
+                        TenSanPham = txtAdd_nameProduct.Text,
+                        DonVi = txtAdd_unitProduct.Text,
+                        DonGia = Convert.ToInt32(txtAdd_priceProduct.Text),
+                        LoaiSanPham = txtAdd_SpeciesProduct.Text,
+                        NhaCungCap = txtAdd_providerProduct.Text,
+                        NhomSanPham = txtAdd_groupProduct.Text
+                    };
+                    // Kiểm tra nếu sản phẩm tồn tại:
+                    if (func.TimKiemSanPham(product.IdSanPham) == null)
+                    {
+                        // Cập nhật sản phẩm
+                        if (func.Update_SanPham(product))
+                        {
+                            XtraMessageBox.Show("Cập nhật sản phẩm thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Có vấn đề trong quá trình cập nhật ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        XtraMessageBox.Show("Có vấn đề trong quá trình cập nhật ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    // Thêm sản phẩm mới
-                    if (func.InsertSanPham(product))
-                    {
-                        XtraMessageBox.Show("Đã thêm thành công sản phẩm: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Lỗi: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Thêm sản phẩm mới
+                        if (func.Insert_SanPham(product))
+                        {
+                            XtraMessageBox.Show("Đã thêm thành công sản phẩm: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Lỗi: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        }
                     }
+
                 }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
+                
 
             }
 

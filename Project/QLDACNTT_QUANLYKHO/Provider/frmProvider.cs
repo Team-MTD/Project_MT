@@ -58,7 +58,7 @@ namespace QLDACNTT_QUANLYKHO
         }
         private void loadData()
         {
-            gcData_Provider.DataSource = func.GetNhaCC();
+            gcData_Provider.DataSource = func.Get_NhaCC();
         }
         #endregion
 
@@ -73,7 +73,7 @@ namespace QLDACNTT_QUANLYKHO
                 object valueNameProvider = gvData_Provider.GetRowCellValue(row_index, nameProvider);
                 if (value != null)
                 {
-                    if (func.DeleteNhaCC((int)value))
+                    if (func.Delete_NhaCC((int)value))
                     {
                         XtraMessageBox.Show("Đã xoá thành công sản phẩm: " + valueNameProvider.ToString().ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData();

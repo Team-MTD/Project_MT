@@ -40,7 +40,7 @@ namespace QLDACNTT_QUANLYKHO
         #region //Method of form
         private void loadData()
         {
-            this.gcData_Product.DataSource = func.GetKho();
+            this.gcData_Product.DataSource = func.Get_SanPham();
         }
 
                 
@@ -91,7 +91,7 @@ namespace QLDACNTT_QUANLYKHO
                 object valueNameProduct = gvData_Product.GetRowCellValue(row_index, nameProduct);
                 if (value != null)
                 {
-                    if (func.DeleteSanPham((string)value))
+                    if (func.Delete_SanPham((string)value))
                     {
                         XtraMessageBox.Show("Đã xoá thành công sản phẩm: " + valueNameProduct.ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData();

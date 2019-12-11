@@ -10,3 +10,15 @@ C:\Users\phamh\source\repos\Quanlykho\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.dll
 C:\Users\phamh\source\repos\Quanlykho\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.pdb
 C:\Users\phamh\source\repos\Quanlykho\DAL_KHOHANG\bin\Debug\DTO_Data.dll
 C:\Users\phamh\source\repos\Quanlykho\DAL_KHOHANG\bin\Debug\DTO_Data.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\DAL_KHOHANG.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\DAL_KHOHANG.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\DTO_Data.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\Provider.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\DTO_Data.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\Provider.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\bin\Debug\Provider.dll.config
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.csprojAssemblyReference.cache
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.csproj.CoreCompileInputs.cache
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.csproj.CopyComplete
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\DAL_KHOHANG\obj\Debug\DAL_KHOHANG.pdb

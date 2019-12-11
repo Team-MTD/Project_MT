@@ -4,3 +4,9 @@ C:\Users\phamh\source\repos\Quanlykho\Provider\bin\Debug\Provider.pdb
 C:\Users\phamh\source\repos\Quanlykho\Provider\obj\Debug\Provider.csproj.CoreCompileInputs.cache
 C:\Users\phamh\source\repos\Quanlykho\Provider\obj\Debug\Provider.dll
 C:\Users\phamh\source\repos\Quanlykho\Provider\obj\Debug\Provider.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\bin\Debug\Provider.dll.config
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\bin\Debug\Provider.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\bin\Debug\Provider.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\obj\Debug\Provider.csproj.CoreCompileInputs.cache
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\obj\Debug\Provider.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\Provider\obj\Debug\Provider.pdb

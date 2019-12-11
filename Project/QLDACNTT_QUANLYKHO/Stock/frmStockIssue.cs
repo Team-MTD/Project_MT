@@ -18,47 +18,17 @@ namespace QLDACNTT_QUANLYKHO
         {
             InitializeComponent();
         }
-
+       
+        
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void frmStockIssue_Load(object sender, EventArgs e)
         {
-            LoadComboBox();
-        }
-        private void LoadComboBox()
-        {
-            //var linq = from item in ConnectString.data.SANPHAMs
-            //           select item.idsanpham;
-            //var list = linq.ToList();
-            //if (list.Count > 0)
-            //{
-            //    foreach (var item in list)
-            //    {
-            //        cboidProduct.Properties.Items.Add(item);
-            //    }
-            //}
-
-        }
-        #region Load Data vao toan bo textbox khi chon combobox
-        private void loadAllData(string value)
-        {
-        //    var linq = from item in ConnectString.data.SANPHAMs
-        //               where item.idsanpham == value
-        //               select item;
-
-        //    var list = linq.ToList();
-        //    if (list.Count > 0)
-        //    {
-        //        txtTenSP.Text = list[0].tensanpham;
-        //    }
-        }
-        #endregion
-        private void cboidProduct_SelectedValueChanged(object sender, EventArgs e)
-        {
-            loadAllData(cboidProduct.SelectedItem.ToString());
+            // TODO: This line of code loads data into the 'qLKHODataSet.SANPHAM' table. You can move, or remove it, as needed.
+           
+            
         }
     }
 }

@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Provider;
 using DTO_Data;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL_KHOHANG
 {
     public class qal
     {
         //Get Sản phẩm trong kho
-        public IQueryable<SANPHAM> Load_Kho()
+        public IQueryable<SANPHAM> Load_SanPham()
         {
             var linq = from item in ConnectDB.cnn.SANPHAMs
                        select item;
@@ -53,7 +55,6 @@ namespace DAL_KHOHANG
                     nhacungcap = product.NhaCungCap,
                     nhomsanpham = product.NhomSanPham
                 };
-
                 ConnectDB.cnn.SANPHAMs.InsertOnSubmit(pro);
                 ConnectDB.cnn.SubmitChanges();
                 return true;
@@ -189,6 +190,112 @@ namespace DAL_KHOHANG
                            where item.idnhacungcap == id
                            select item;
                 return data != null ? data : null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+       
+
+        ///Nhập phiếu nhập kho
+        public bool AddNew_PhieuNhapKho(NhapKho product)
+        {
+            try
+            {
+
+                NHAPKHO pro = new NHAPKHO
+                {
+                    idphieunhap = product.IdPhieuNhap,
+                    ngaynhapkho = product.NgayNhap,
+                    soluongnhap = product.SoLuongNhap,
+                    idsanpham = product.IdSanPham,
+                    idnhansu = product.IdNhanSu,
+                    idnhacungcap = product.IdNhaCungCap,
+                    idkho = product.IdKho
+                };
+                ConnectDB.cnn.NHAPKHOs.InsertOnSubmit(pro);
+                ConnectDB.cnn.SubmitChanges();
+                return true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return false;
+        }
+
+
+        public string Create_PhieuNhap()
+        {
+            try
+            {
+                var data = from item in ConnectDB.cnn.NHAPKHOs
+                           select item;
+                string maN = "";
+                var linq = data.ToList();
+                if (linq.Count <= 0)
+                {
+                    maN = "NHAP001";
+                }
+                else
+                {
+                    int x;
+                    maN = "NHAP";
+                    x = linq.Count;
+                    x = x + 1;
+                    if (x < 10)
+                    {
+                        maN = maN + "00";
+                    }
+                    else if (x < 1000)
+                    {
+                        maN = maN + "0";
+                    }
+                    maN = maN + x.ToString();
+                }
+                return maN;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+
+        /// NHÂN SỰ
+        public IQueryable<NHANSU> Load_Nhansu()
+        {
+            var linq = from item in ConnectDB.cnn.NHANSUs
+                       select item;
+            return linq;
+        }
+
+
+
+        // KHO
+        public IQueryable<KHO> Load_ChiTietKho()
+        {
+            var linq = from item in ConnectDB.cnn.KHOs
+                       select item;
+            return linq;
+        }
+
+
+
+
+        // NHẬP KHO
+        public bool AddNew_NhapKhos(IEnumerable<NHAPKHO> list)
+        {
+            try
+            {
+                ConnectDB.cnn.NHAPKHOs.InsertAllOnSubmit(list);
+                ConnectDB.cnn.SubmitChanges();
+                return true;
             }
             catch (Exception)
             {

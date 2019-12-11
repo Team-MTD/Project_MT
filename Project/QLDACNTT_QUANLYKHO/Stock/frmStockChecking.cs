@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace QLDACNTT_QUANLYKHO
 {
@@ -17,10 +18,16 @@ namespace QLDACNTT_QUANLYKHO
         {
             InitializeComponent();
         }
-
+        
+        
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmStockChecking_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

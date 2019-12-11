@@ -12,14 +12,14 @@ namespace BUS_KHOHANG
     {
         private qal data = new qal();
 
-        //Load kho
-        public IQueryable<SANPHAM> GetKho()
+        //Load san phẩm
+        public IQueryable<SANPHAM> Get_SanPham()
         {
-            var dat = data.Load_Kho();
+            var dat = data.Load_SanPham();
             return dat;
         }
         // Load Nhà cung cấp
-        public IQueryable<PROVIDER> GetNhaCC()
+        public IQueryable<PROVIDER> Get_NhaCC()
         {
             var nhacc = data.Load_NhaCC();
             return nhacc;
@@ -34,18 +34,18 @@ namespace BUS_KHOHANG
         }
 
         //Them San Pham
-        public bool InsertSanPham(Product sp)
+        public bool Insert_SanPham(Product sp)
         {
             return data.AddNew_SP(sp);
         }
         //Xoa San Pham
-        public bool DeleteSanPham(string id)
+        public bool Delete_SanPham(string id)
         {
             return data.Delete_SP(id);
         }
 
         //Update San Pham
-        public bool UpdateSanPham(Product sp)
+        public bool Update_SanPham(Product sp)
         {
             return data.Update_SP(sp);
         }
@@ -64,22 +64,62 @@ namespace BUS_KHOHANG
         }
 
         //Tạo mới nhà cung cấp
-        public bool InsertNhaCC(NhaCC nhacc)
+        public bool Insert_NhaCC(NhaCC nhacc)
         {
             return data.AddNew_NhaCC(nhacc);
         }
         //Xóa nhà cung cấp
-        public bool DeleteNhaCC(int id)
+        public bool Delete_NhaCC(int id)
         {
             return data.Delete_NhaCC(id);
         }
 
         //Cập nhật lại nhà cung cấp
-        public bool UpdateNhaCC(NhaCC nhacc)
+        public bool Update_NhaCC(NhaCC nhacc)
         {
             return data.Update_NhaCC(nhacc);
         }
 
+        #endregion
+
+
+        #region //Phiếu nhập kho 
+        public string Load_MaPhieuNhap()
+        {
+            return data.Create_PhieuNhap();
+        }
+
+
+        public bool InsertPhieuNhap(NhapKho sp)
+        {
+            return data.AddNew_PhieuNhapKho(sp);
+        }
+        #endregion
+
+        #region // Nhân sự
+        public IQueryable<NHANSU> Get_NhanSu()
+        {
+            var dat = data.Load_Nhansu();
+            return dat;
+        }
+        #endregion
+
+
+        #region Kho
+        public IEnumerable<KHO> Get_Kho()
+        {
+            return data.Load_ChiTietKho();
+        }
+        #endregion
+
+
+
+
+        #region // Nhập Kho
+        public bool Insert_NhapKho(IEnumerable<NHAPKHO> list)
+        {
+            return data.AddNew_NhapKhos(list);
+        }
         #endregion
     }
 }

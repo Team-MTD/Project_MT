@@ -55,7 +55,7 @@ namespace QLDACNTT_QUANLYKHO
                 if (func.KiemtraNhaCC(nhacc.idNhaCC) != null)
                 {
                     // Cập nhật lại thông tin nhà cung cấp
-                    if (func.UpdateNhaCC(nhacc))
+                    if (func.Update_NhaCC(nhacc))
                     {
                         XtraMessageBox.Show("Cập nhật sản phẩm thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -67,7 +67,7 @@ namespace QLDACNTT_QUANLYKHO
                 else
                 {
                     // Tạo mới một nhà cung cấp
-                    if (func.InsertNhaCC(nhacc))
+                    if (func.Insert_NhaCC(nhacc))
                     {
                         XtraMessageBox.Show("Đã thêm thành công sản phẩm: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
