@@ -24,6 +24,7 @@ namespace QLDACNTT_QUANLYKHO
         List<KHO> garage;
         List<KIEMKE> list_Kiemke = new List<KIEMKE>();
         List<Phieukiemke> pt = new List<Phieukiemke>();
+
         public frmStockChecking()
         {
             InitializeComponent();
@@ -73,7 +74,7 @@ namespace QLDACNTT_QUANLYKHO
         {
             var findItem = bus.TimKiemSanPham(cboMa.SelectedItem.ToString().Trim()).ToList();
             cboTen.SelectedItem = findItem[0].tensanpham;
-            sltonmay.Text = findItem[0].soluongton.ToString();
+            sltonmay.Text = findItem[0].soluongton+"";
         }
 
         private void sltonthucte_Leave(object sender, EventArgs e)
@@ -105,6 +106,7 @@ namespace QLDACNTT_QUANLYKHO
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(txtThanhphan.Text);
             try
             {
                 //Object cho phiếu nhập
@@ -114,30 +116,45 @@ namespace QLDACNTT_QUANLYKHO
                     MaSanPham = cboMa.SelectedItem.ToString(),
                     TenSanPham = cboTen.SelectedItem.ToString(),
                     NgayKiemKe = ngaykiemke.EditValue.ToString(),
-                    //NguoiNhap = cboNguoi.SelectedItem.ToString(),
                     SoLuongTonThucTe = Int32.Parse(sltonthucte.Text),
-                    SoLuongTonTheoMay = Int32.Parse(sltonmay.Text)
-                    
+                    SoLuongTonTheoMay = Int32.Parse(sltonmay.Text),
+                    NguoiKiemKe= txtThanhphan.Text,
                 };
+
+
                 // Object cho nhập kho
                 KIEMKE kiemKe = new KIEMKE
                 {
                     idphieukiemke = phieu.MaPhieuKiemKe,
                     ngaykiemke = Convert.ToDateTime(ngaykiemke.EditValue),
-                    soluongtonkho = phieu.SoLuongTonTheoMay,
-                    idsanpham = phieu.MaSanPham
+                    soluongtonkho = phieu.SoLuongTonThucTe,
+                    idsanpham = phieu.MaSanPham,
+                    nhansu = txtThanhphan.Text
                 };
 
                 list_Kiemke.Add(kiemKe);
                 pt.Add(phieu);
-                gcDataKiemkekho.RefreshDataSource();
-                gcDataKiemkekho.DataSource = pt;
+                gcData_Kiemkekho.RefreshDataSource();
+                gcData_Kiemkekho.DataSource = pt;
             }
             catch (Exception)
             {
                 MessageBox.Show("Mời bạn nhập đầy đủ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Reset_Field();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bus.Insert_Kiemke(list_Kiemke);
+                gcData_Kiemkekho.DataSource = null;
+                MessageBox.Show("Đã duyệt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BUS_KHOHANG;
+using QLDACNTT_QUANLYKHO.Report;
 
 
 namespace QLDACNTT_QUANLYKHO
@@ -93,16 +94,8 @@ namespace QLDACNTT_QUANLYKHO
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            try
-            {
-                string Filename = @"C:\Users\phamh\Desktop\test.xlsx";
-                gcData_Main.ExportToXlsx(Filename);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            Reportfrm reportfrm = new Reportfrm();
+            reportfrm.ShowDialog();
             
         }
     }

@@ -60,7 +60,8 @@
             this.btnDel = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
-            this.gcDataKiemkekho = new DevExpress.XtraGrid.GridControl();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gvDataKiemkekho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,8 +69,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gcData_Kiemkekho = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -101,10 +101,10 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcDataKiemkekho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDataKiemkekho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDataKiemkekho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcData_Kiemkekho)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -397,6 +397,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(218, 66);
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Lưu";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btnAdd
             // 
@@ -431,7 +432,7 @@
             // 
             // layoutControl3
             // 
-            this.layoutControl3.Controls.Add(this.gcDataKiemkekho);
+            this.layoutControl3.Controls.Add(this.gcData_Kiemkekho);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl3.Location = new System.Drawing.Point(2, 29);
             this.layoutControl3.Margin = new System.Windows.Forms.Padding(4);
@@ -441,30 +442,30 @@
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
-            // gcDataKiemkekho
+            // layoutControlGroup2
             // 
-            this.gcDataKiemkekho.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gcDataKiemkekho.Location = new System.Drawing.Point(12, 12);
-            this.gcDataKiemkekho.MainView = this.gvDataKiemkekho;
-            this.gcDataKiemkekho.Margin = new System.Windows.Forms.Padding(4);
-            this.gcDataKiemkekho.Name = "gcDataKiemkekho";
-            this.gcDataKiemkekho.Size = new System.Drawing.Size(1097, 256);
-            this.gcDataKiemkekho.TabIndex = 4;
-            this.gcDataKiemkekho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvDataKiemkekho});
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8});
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1121, 280);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.gcData_Kiemkekho;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(1101, 260);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // gvDataKiemkekho
             // 
-            this.gvDataKiemkekho.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6});
             this.gvDataKiemkekho.DetailHeight = 512;
             this.gvDataKiemkekho.FixedLineWidth = 3;
-            this.gvDataKiemkekho.GridControl = this.gcDataKiemkekho;
+            this.gvDataKiemkekho.GridControl = this.gcData_Kiemkekho;
             this.gvDataKiemkekho.Name = "gvDataKiemkekho";
             this.gvDataKiemkekho.OptionsView.ShowGroupPanel = false;
             // 
@@ -530,24 +531,17 @@
             this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 227;
             // 
-            // layoutControlGroup2
+            // gcData_Kiemkekho
             // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem8});
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1121, 280);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.gcDataKiemkekho;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1101, 260);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.gcData_Kiemkekho.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcData_Kiemkekho.Location = new System.Drawing.Point(12, 12);
+            this.gcData_Kiemkekho.MainView = this.gvDataKiemkekho;
+            this.gcData_Kiemkekho.Margin = new System.Windows.Forms.Padding(4);
+            this.gcData_Kiemkekho.Name = "gcData_Kiemkekho";
+            this.gcData_Kiemkekho.Size = new System.Drawing.Size(1097, 256);
+            this.gcData_Kiemkekho.TabIndex = 4;
+            this.gcData_Kiemkekho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvDataKiemkekho});
             // 
             // frmStockChecking
             // 
@@ -598,10 +592,10 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcDataKiemkekho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDataKiemkekho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDataKiemkekho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcData_Kiemkekho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,10 +626,7 @@
         private DevExpress.XtraEditors.SimpleButton btnDel;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraLayout.LayoutControl layoutControl3;
-        private DevExpress.XtraGrid.GridControl gcDataKiemkekho;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvDataKiemkekho;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private System.Windows.Forms.ComboBox cboTen;
         private System.Windows.Forms.ComboBox cboMa;
         private DevExpress.XtraLayout.LayoutControlItem ala;
@@ -645,6 +636,9 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.GridControl gcData_Kiemkekho;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvDataKiemkekho;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;

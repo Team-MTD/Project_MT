@@ -158,10 +158,18 @@ namespace BUS_KHOHANG
             return data.AddNew_XuatKhos(list);
         }
         #endregion
+
+
         #region // Kiểm kê kho
         public string Load_MaPhieuKiemKe()
         {
             return data.Create_PhieuKiemKe();
+        }
+
+        public IQueryable<KIEMKE> Get_KiemKe()
+        {
+            var nhansu = data.Load_KiemKe();
+            return nhansu;
         }
 
         public bool Insert_Kiemke(IEnumerable<KIEMKE> list)

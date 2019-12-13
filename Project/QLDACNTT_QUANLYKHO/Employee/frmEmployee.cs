@@ -24,7 +24,7 @@ namespace QLDACNTT_QUANLYKHO.Employee
         }
         DelegateShow ShowForm;
         frmUpdateEmployee _frmUpdateEmployee;
-            
+
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             loadData();
@@ -44,13 +44,11 @@ namespace QLDACNTT_QUANLYKHO.Employee
             if (data != null)
             {
                 var x = data.ToList();
-                foreach (var item in x)
-                {
-                    prov.IdNhanSu = item.idnhansu;
-                    prov.DienThoai = item.dienthoai;
-                    prov.TenNhanSu = item.tennhansu;
-                    prov.DiaChi = item.diachi;
-                }
+
+                prov.IdNhanSu = x[0].idnhansu;
+                prov.DienThoai = x[0].dienthoai;
+                prov.TenNhanSu = x[0].tennhansu;
+                prov.DiaChi = x[0].diachi;
                 return prov;
             }
             return null;

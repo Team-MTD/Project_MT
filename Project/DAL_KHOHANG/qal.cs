@@ -503,6 +503,17 @@ namespace DAL_KHOHANG
             }
         }
         // KIỂM KÊ
+
+        public IQueryable<KIEMKE> Load_KiemKe()
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var linq = from item in connectDB.cnn.KIEMKEs
+                       select item;
+
+            return linq;
+        }
+
+
         public bool AddNew_KiemKes(IEnumerable<KIEMKE> list)
         {
             try
