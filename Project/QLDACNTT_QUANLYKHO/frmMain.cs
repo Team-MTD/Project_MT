@@ -91,5 +91,19 @@ namespace QLDACNTT_QUANLYKHO
         }
         #endregion
 
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                string Filename = @"C:\Users\phamh\Desktop\test.xlsx";
+                gcData_Main.ExportToXlsx(Filename);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
     }
 }

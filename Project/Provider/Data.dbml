@@ -14,8 +14,8 @@
       <Column Name="idkho" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenkho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="vitrikho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="KHO_XUATKHO" Member="XUATKHOs" ThisKey="idkho" OtherKey="idkho" Type="XUATKHO" />
       <Association Name="KHO_NHAPKHO" Member="NHAPKHOs" ThisKey="idkho" OtherKey="idkho" Type="NHAPKHO" />
+      <Association Name="KHO_XUATKHO" Member="XUATKHOs" ThisKey="idkho" OtherKey="idkho" Type="XUATKHO" />
     </Type>
   </Table>
   <Table Name="dbo.KIEMKE" Member="KIEMKEs">
@@ -53,17 +53,6 @@
       <Association Name="PROVIDER_NHAPKHO" Member="NHAPKHOs" ThisKey="idnhacungcap" OtherKey="idnhacungcap" Type="NHAPKHO" />
     </Type>
   </Table>
-  <Table Name="dbo.XUATKHO" Member="XUATKHOs">
-    <Type Name="XUATKHO">
-      <Column Name="idphieuxuat" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ngayxuatkho" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="soluongxuat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="idkho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="idnhansu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="KHO_XUATKHO" Member="KHO" ThisKey="idkho" OtherKey="idkho" Type="KHO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
     <Type Name="SANPHAM">
       <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -92,6 +81,18 @@
       <Association Name="KHO_NHAPKHO" Member="KHO" ThisKey="idkho" OtherKey="idkho" Type="KHO" IsForeignKey="true" />
       <Association Name="PROVIDER_NHAPKHO" Member="PROVIDER" ThisKey="idnhacungcap" OtherKey="idnhacungcap" Type="PROVIDER" IsForeignKey="true" />
       <Association Name="SANPHAM_NHAPKHO" Member="SANPHAM" ThisKey="idsanpham" OtherKey="idsanpham" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XUATKHO" Member="XUATKHOs">
+    <Type Name="XUATKHO">
+      <Column Name="idphieuxuat" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayxuatkho" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="soluongxuat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idsanpham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idkho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="idnhansu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="KHO_XUATKHO" Member="KHO" ThisKey="idkho" OtherKey="idkho" Type="KHO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

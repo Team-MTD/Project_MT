@@ -8,16 +8,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DTO_Data;
+using BUS_KHOHANG;
+
 
 namespace QLDACNTT_QUANLYKHO.Employee
 {
     public partial class frmEmployee : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public bus func = new bus();
+        public delegate void DelegateShow(NhanSu ns);
         public frmEmployee()
         {
             InitializeComponent();
         }
-        
+        DelegateShow ShowForm;
+        frmUpdateEmployee _frmUpdateEmployee;
             
         private void frmEmployee_Load(object sender, EventArgs e)
         {
@@ -28,7 +34,26 @@ namespace QLDACNTT_QUANLYKHO.Employee
             //DataDemoDataContext db = new DataDemoDataContext();
             //var dsNS = db.NHANSUs.ToList();
             //gcData_Employee.DataSource = dsNS;
-            
+            this.gcData_Employee.DataSource = func.Get_NhanSu();
+        }
+        private NhanSu GetData(int id)
+        {
+            var data = func.KiemtraNhanSu(id);
+            NhanSu prov = new NhanSu();
+
+            if (data != null)
+            {
+                var x = data.ToList();
+                foreach (var item in x)
+                {
+                    prov.IdNhanSu = item.idnhansu;
+                    prov.DienThoai = item.dienthoai;
+                    prov.TenNhanSu = item.tennhansu;
+                    prov.DiaChi = item.diachi;
+                }
+                return prov;
+            }
+            return null;
         }
         private void barbtnUpdateEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

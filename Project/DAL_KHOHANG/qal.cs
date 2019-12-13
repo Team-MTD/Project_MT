@@ -15,7 +15,8 @@ namespace DAL_KHOHANG
         //Get Sản phẩm trong kho
         public IQueryable<SANPHAM> Load_SanPham()
         {
-            var linq = from item in ConnectDB.cnn.SANPHAMs
+            ConnectDB connectDB = new ConnectDB();
+            var linq = from item in connectDB.cnn.SANPHAMs
                        select item;
 
             return linq;
@@ -26,7 +27,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                var data = from item in ConnectDB.cnn.SANPHAMs
+                var data = from item in ConnectDB.cnn2.SANPHAMs
                            where item.idsanpham == id.Trim()
                            select item;
                 return data;
@@ -36,6 +37,9 @@ namespace DAL_KHOHANG
                 throw;
             }
         }
+        
+        
+
 
         /// 
         /// SẢN PHẨM
@@ -55,8 +59,9 @@ namespace DAL_KHOHANG
                     nhacungcap = product.NhaCungCap,
                     nhomsanpham = product.NhomSanPham
                 };
-                ConnectDB.cnn.SANPHAMs.InsertOnSubmit(pro);
-                ConnectDB.cnn.SubmitChanges();
+                ConnectDB connectDB = new ConnectDB();
+                connectDB.cnn.SANPHAMs.InsertOnSubmit(pro);
+                connectDB.cnn.SubmitChanges();
                 return true;
 
             }
@@ -71,9 +76,10 @@ namespace DAL_KHOHANG
         {
             try
             {
-                SANPHAM sp = ConnectDB.cnn.SANPHAMs.Single(item => item.idsanpham == masp);
-                ConnectDB.cnn.SANPHAMs.DeleteOnSubmit(sp);
-                ConnectDB.cnn.SubmitChanges();
+                ConnectDB connectDB=new ConnectDB();
+                SANPHAM sp = connectDB.cnn.SANPHAMs.Single(item => item.idsanpham == masp);
+                connectDB.cnn.SANPHAMs.DeleteOnSubmit(sp);
+                connectDB.cnn.SubmitChanges();
                 return true;
             }
             catch (Exception)
@@ -88,19 +94,20 @@ namespace DAL_KHOHANG
         {
             try
             {
-                var linq = from item in ConnectDB.cnn.SANPHAMs
+                ConnectDB connectDB=new ConnectDB();
+                var linq = from item in connectDB.cnn.SANPHAMs
                            where product.IdSanPham.Equals(item.idsanpham)
                            select item;
                 if (linq != null)
                 {
-                    SANPHAM sp = ConnectDB.cnn.SANPHAMs.Single(item => item.idsanpham == product.IdSanPham);
+                    SANPHAM sp = connectDB.cnn.SANPHAMs.Single(item => item.idsanpham == product.IdSanPham);
                     sp.loaisanpham = product.LoaiSanPham;
                     sp.nhacungcap = product.NhaCungCap;
                     sp.donvi = product.DonVi;
                     sp.dongia = product.DonGia;
                     sp.nhomsanpham = product.NhomSanPham;
                     sp.tensanpham = product.TenSanPham;
-                    ConnectDB.cnn.SubmitChanges();
+                    connectDB.cnn.SubmitChanges();
                     return true;
                 }
                 return false;
@@ -112,11 +119,108 @@ namespace DAL_KHOHANG
         }
 
 
+        /// NHAN SU
+        /// 
+        public IQueryable<NHANSU> Load_NhanSu()
+        {
+            ConnectDB connectDB=new ConnectDB();
+            var linq = from item in connectDB.cnn.NHANSUs
+                       select item;
+
+            return linq;
+        }
+
+        public bool AddNew_Nhansu(NhanSu nhanSu)
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                NHANSU prov = new NHANSU()
+                {
+                    idnhansu = nhanSu.IdNhanSu,
+                    diachi = nhanSu.DiaChi,
+                    dienthoai = nhanSu.DienThoai,
+                    tennhansu = nhanSu.TenNhanSu,
+                    email = nhanSu.Email,
+                    //gioitinh = nhanSu.GioiTinh,
+                    chucvu = nhanSu.ChucVu,
+                    //ngayvaolam = nhanSu.NgayVaoLam,
+                };
+                connectDB.cnn.NHANSUs.InsertOnSubmit(prov);
+                connectDB.cnn.SubmitChanges();
+                return true;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return false;
+        }
+
+        public bool Update_NhanSu(NhanSu nhanSu)
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                NHANSU sp = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == nhanSu.IdNhanSu);
+                sp.idnhansu = sp.idnhansu;
+                sp.tennhansu = nhanSu.TenNhanSu;
+                sp.dienthoai = nhanSu.DienThoai;
+                sp.diachi = nhanSu.DiaChi;
+                sp.email = nhanSu.Email;
+                sp.chucvu = nhanSu.ChucVu;
+                //sp.gioitinh = nhanSu.GioiTinh;
+                connectDB.cnn.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
+        public bool Delete_NhanSu(int manhanSu)
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                NHANSU nhansu = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == manhanSu);
+                connectDB.cnn.NHANSUs.DeleteOnSubmit(nhansu);
+                connectDB.cnn.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return false;
+        }
+
+        // Kiem tra xem nhan su đã tồn tại chưa
+        public IQueryable<NHANSU> Check_NhanSu(int id)
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                var data = from item in connectDB.cnn.NHANSUs
+                           where item.idnhansu == id
+                           select item;
+                return data != null ? data : null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         /// NHÀ CUNG CẤP
         /// 
         public IQueryable<PROVIDER> Load_NhaCC()
         {
-            var linq = from item in ConnectDB.cnn.PROVIDERs
+            ConnectDB connectDB = new ConnectDB();
+            var linq = from item in connectDB.cnn.PROVIDERs
                        select item;
 
             return linq;
@@ -126,6 +230,7 @@ namespace DAL_KHOHANG
         {
             try
             {
+                ConnectDB connectDB = new ConnectDB();
                 PROVIDER prov = new PROVIDER()
                 {
                     idnhacungcap = nhaCC.idNhaCC,
@@ -133,8 +238,8 @@ namespace DAL_KHOHANG
                     sdtnhacungcap = nhaCC.PhoneNhaCC,
                     tennhacungcap = nhaCC.TenNhaCC
                 };
-                ConnectDB.cnn.PROVIDERs.InsertOnSubmit(prov);
-                ConnectDB.cnn.SubmitChanges();
+                connectDB.cnn.PROVIDERs.InsertOnSubmit(prov);
+                connectDB.cnn.SubmitChanges();
                 return true;
 
             }
@@ -150,12 +255,13 @@ namespace DAL_KHOHANG
         {
             try
             {
-                PROVIDER sp = ConnectDB.cnn.PROVIDERs.Single(item => item.idnhacungcap == prov.idNhaCC);
+                ConnectDB connectDB = new ConnectDB();
+                PROVIDER sp = connectDB.cnn.PROVIDERs.Single(item => item.idnhacungcap == prov.idNhaCC);
                 sp.idnhacungcap = sp.idnhacungcap;
                 sp.tennhacungcap = prov.TenNhaCC;
                 sp.sdtnhacungcap = prov.PhoneNhaCC;
                 sp.diachinhacungcap = prov.DiaChiNhaCC;
-                ConnectDB.cnn.SubmitChanges();
+                connectDB.cnn.SubmitChanges();
                 return true;
             }
             catch (Exception)
@@ -169,9 +275,10 @@ namespace DAL_KHOHANG
         {
             try
             {
-                PROVIDER nhacc = ConnectDB.cnn.PROVIDERs.Single(item => item.idnhacungcap == manhaCC);
-                ConnectDB.cnn.PROVIDERs.DeleteOnSubmit(nhacc);
-                ConnectDB.cnn.SubmitChanges();
+                ConnectDB connectDB = new ConnectDB();
+                PROVIDER nhacc = connectDB.cnn.PROVIDERs.Single(item => item.idnhacungcap == manhaCC);
+                connectDB.cnn.PROVIDERs.DeleteOnSubmit(nhacc);
+                connectDB.cnn.SubmitChanges();
                 return true;
             }
             catch (Exception)
@@ -186,7 +293,8 @@ namespace DAL_KHOHANG
         {
             try
             {
-                var data = from item in ConnectDB.cnn.PROVIDERs
+                ConnectDB connectDB = new ConnectDB();
+                var data = from item in connectDB.cnn.PROVIDERs
                            where item.idnhacungcap == id
                            select item;
                 return data != null ? data : null;
@@ -198,7 +306,7 @@ namespace DAL_KHOHANG
         }
 
 
-       
+
 
         ///Nhập phiếu nhập kho
         public bool AddNew_PhieuNhapKho(NhapKho product)
@@ -206,6 +314,7 @@ namespace DAL_KHOHANG
             try
             {
 
+                ConnectDB connectDB=new ConnectDB();
                 NHAPKHO pro = new NHAPKHO
                 {
                     idphieunhap = product.IdPhieuNhap,
@@ -216,8 +325,8 @@ namespace DAL_KHOHANG
                     idnhacungcap = product.IdNhaCungCap,
                     idkho = product.IdKho
                 };
-                ConnectDB.cnn.NHAPKHOs.InsertOnSubmit(pro);
-                ConnectDB.cnn.SubmitChanges();
+                connectDB.cnn.NHAPKHOs.InsertOnSubmit(pro);
+                connectDB.cnn.SubmitChanges();
                 return true;
 
             }
@@ -228,12 +337,49 @@ namespace DAL_KHOHANG
             return false;
         }
 
+        public string Create_PhieuXuat()
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                var data = from item in connectDB.cnn.XUATKHOs
+                           select item;
+                string maN = "";
+                var linq = data.ToList();
+                if (linq.Count <= 0)
+                {
+                    maN = "XUAT001";
+                }
+                else
+                {
+                    int x;
+                    maN = "XUAT";
+                    x = linq.Count;
+                    x = x + 1;
+                    if (x < 10)
+                    {
+                        maN = maN + "00";
+                    }
+                    else if (x < 1000)
+                    {
+                        maN = maN + "0";
+                    }
+                    maN = maN + x.ToString();
+                }
+                return maN;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
+        }
         public string Create_PhieuNhap()
         {
             try
             {
-                var data = from item in ConnectDB.cnn.NHAPKHOs
+                ConnectDB connectDB=new ConnectDB();
+                var data = from item in connectDB.cnn.NHAPKHOs
                            select item;
                 string maN = "";
                 var linq = data.ToList();
@@ -265,12 +411,50 @@ namespace DAL_KHOHANG
             }
 
         }
+        //PHIẾU KIỂM KÊ
+        public string Create_PhieuKiemKe()
+        {
+            try
+            {
+                ConnectDB connectDB = new ConnectDB();
+                var data = from item in connectDB.cnn.KIEMKEs
+                           select item;
+                string maKK = "";
+                var linq = data.ToList();
+                if (linq.Count <= 0)
+                {
+                    maKK = "KIEMKE001";
+                }
+                else
+                {
+                    int x;
+                    maKK = "KIEMKE";
+                    x = linq.Count;
+                    x = x + 1;
+                    if (x < 10)
+                    {
+                        maKK = maKK + "00";
+                    }
+                    else if (x < 1000)
+                    {
+                        maKK = maKK + "0";
+                    }
+                    maKK = maKK + x.ToString();
+                }
+                return maKK;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
+        }
 
         /// NHÂN SỰ
         public IQueryable<NHANSU> Load_Nhansu()
         {
-            var linq = from item in ConnectDB.cnn.NHANSUs
+            ConnectDB connectDB=new ConnectDB();
+            var linq = from item in connectDB.cnn.NHANSUs
                        select item;
             return linq;
         }
@@ -280,12 +464,11 @@ namespace DAL_KHOHANG
         // KHO
         public IQueryable<KHO> Load_ChiTietKho()
         {
-            var linq = from item in ConnectDB.cnn.KHOs
+            ConnectDB connectDB=new ConnectDB();
+            var linq = from item in connectDB.cnn.KHOs
                        select item;
             return linq;
         }
-
-
 
 
         // NHẬP KHO
@@ -293,8 +476,40 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB.cnn.NHAPKHOs.InsertAllOnSubmit(list);
-                ConnectDB.cnn.SubmitChanges();
+                ConnectDB connectDB=new ConnectDB();
+                connectDB.cnn.NHAPKHOs.InsertAllOnSubmit(list);
+                connectDB.cnn.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // XUẤT KHO
+        public bool AddNew_XuatKhos(IEnumerable<XUATKHO> list)
+        {
+            try
+            {
+                ConnectDB connectDB=new ConnectDB();
+                connectDB.cnn.XUATKHOs.InsertAllOnSubmit(list);
+                connectDB.cnn.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        // KIỂM KÊ
+        public bool AddNew_KiemKes(IEnumerable<KIEMKE> list)
+        {
+            try
+            {
+                ConnectDB connectDB = new ConnectDB();
+                connectDB.cnn.KIEMKEs.InsertAllOnSubmit(list);
+                connectDB.cnn.SubmitChanges();
                 return true;
             }
             catch (Exception)

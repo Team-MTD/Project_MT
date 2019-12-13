@@ -9,6 +9,9 @@ namespace DAL_KHOHANG
 {
     class ConnectDB
     {
-        public static DataDataContext cnn = new DataDataContext(@"Data Source=DESKTOP-L80PNMH\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=True");
+        public DataDataContext cnn = new DataDataContext(@"Data Source=DESKTOP-L80PNMH\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=True");
+        public static DataDataContext cnn2 = new DataDataContext(@"Data Source=DESKTOP-L80PNMH\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=True");
+        public static DataDataContext cnn3 = new DataDataContext(@"Data Source=DESKTOP-L80PNMH\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=True");
+
     }
 }

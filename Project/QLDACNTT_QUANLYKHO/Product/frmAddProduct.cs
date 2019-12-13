@@ -8,22 +8,33 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 using BUS_KHOHANG;
 using DTO_Data;
+using Provider;
 
 namespace QLDACNTT_QUANLYKHO
 {
     public partial class frmAddProduct : DevExpress.XtraEditors.XtraForm
     {
         public bus func = new bus();
-
+        bus bus = new bus();
+        List<PROVIDER> provider;
         public frmAddProduct()
         {
             InitializeComponent();
         }
+        public void Load_NhaCungCap()
+        {
+            provider = bus.Get_NhaCC().ToList();
+            foreach (var item in provider)
+            {
+                cboNCC.Items.Add(item.tennhacungcap);
+            }
+        }
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
-           
+            Load_NhaCungCap();
         }
         //public bool isAdd = true;
 
@@ -33,7 +44,7 @@ namespace QLDACNTT_QUANLYKHO
             txtAdd_idProduct.Text = pro.IdSanPham;
             txtAdd_nameProduct.Text = pro.TenSanPham;
             txtAdd_priceProduct.Text = pro.DonGia.ToString();
-            txtAdd_providerProduct.Text = pro.NhaCungCap;
+            cboNCC.Text = pro.NhaCungCap;
             txtAdd_unitProduct.Text = pro.DonVi;
             txtAdd_groupProduct.Text = pro.NhomSanPham;
             txtAdd_SpeciesProduct.Text = pro.LoaiSanPham;
@@ -69,11 +80,12 @@ namespace QLDACNTT_QUANLYKHO
                         DonVi = txtAdd_unitProduct.Text,
                         DonGia = Convert.ToInt32(txtAdd_priceProduct.Text),
                         LoaiSanPham = txtAdd_SpeciesProduct.Text,
-                        NhaCungCap = txtAdd_providerProduct.Text,
+                        NhaCungCap = cboNCC.Text,
                         NhomSanPham = txtAdd_groupProduct.Text
                     };
                     // Kiểm tra nếu sản phẩm tồn tại:
-                    if (func.TimKiemSanPham(product.IdSanPham) == null)
+                    var x = func.TimKiemSanPham(product.IdSanPham);
+                    if (x.ToList().Count>0)
                     {
                         // Cập nhật sản phẩm
                         if (func.Update_SanPham(product))
@@ -106,9 +118,8 @@ namespace QLDACNTT_QUANLYKHO
                     throw;
                 }
                 
-                
-
             }
+            this.Close();
 
         }
         #endregion

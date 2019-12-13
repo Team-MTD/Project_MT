@@ -12,6 +12,8 @@ using System.Data.SqlClient;
 using BUS_KHOHANG;
 using DTO_Data;
 using Provider;
+
+
 namespace QLDACNTT_QUANLYKHO
 {
     public partial class frmStockReceipt : DevExpress.XtraEditors.XtraForm
@@ -246,6 +248,23 @@ namespace QLDACNTT_QUANLYKHO
             object Soluong = gridView1.GetRowCellValue(row_index, col_fieldname);
             soluongnhap.Text = Soluong.ToString();
 
+        }
+
+        private void thanhtien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void soluongnhap_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                thanhtien.Text = "" + Convert.ToInt32(soluongnhap.Text) * Convert.ToInt32(dongia.Text);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

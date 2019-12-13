@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.rbControl_Tool = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -87,7 +86,7 @@
             this.skinPaletteDropDownButtonItem1,
             this.barButtonItem2});
             this.rbControl_Tool.Location = new System.Drawing.Point(0, 0);
-            this.rbControl_Tool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbControl_Tool.Margin = new System.Windows.Forms.Padding(4);
             this.rbControl_Tool.MaxItemId = 14;
             this.rbControl_Tool.Name = "rbControl_Tool";
             this.rbControl_Tool.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -152,6 +151,7 @@
             this.barButtonItem7.Id = 7;
             this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -263,7 +263,7 @@
             // 
             this.gcData_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gcData_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcData_Main.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcData_Main.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcData_Main.EmbeddedNavigator.ShowToolTips = false;
             this.gcData_Main.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gridLevelNode1.RelationName = "Level1";
@@ -271,7 +271,7 @@
             gridLevelNode1});
             this.gcData_Main.Location = new System.Drawing.Point(0, 202);
             this.gcData_Main.MainView = this.gvData_Main;
-            this.gcData_Main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcData_Main.Margin = new System.Windows.Forms.Padding(4);
             this.gcData_Main.Name = "gcData_Main";
             this.gcData_Main.ShowOnlyPredefinedDetails = true;
             this.gcData_Main.Size = new System.Drawing.Size(1341, 491);
@@ -414,7 +414,7 @@
             this.Controls.Add(this.rbControl_Tool);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.InactiveGlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ KHO SẢN PHẨM NHÀ SÁCH CHÂU";

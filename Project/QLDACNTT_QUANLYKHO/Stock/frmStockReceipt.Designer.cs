@@ -173,6 +173,7 @@
             this.soluongnhap.Name = "soluongnhap";
             this.soluongnhap.Size = new System.Drawing.Size(159, 30);
             this.soluongnhap.TabIndex = 9;
+            this.soluongnhap.Leave += new System.EventHandler(this.soluongnhap_Leave);
             // 
             // cboTen
             // 
@@ -219,6 +220,7 @@
             this.thanhtien.Name = "thanhtien";
             this.thanhtien.Size = new System.Drawing.Size(162, 30);
             this.thanhtien.TabIndex = 9;
+            this.thanhtien.TextChanged += new System.EventHandler(this.thanhtien_TextChanged);
             // 
             // Root
             // 
@@ -363,6 +365,7 @@
             // 
             this.gridView1.GridControl = this.gcData_Nhapkho;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             // 
