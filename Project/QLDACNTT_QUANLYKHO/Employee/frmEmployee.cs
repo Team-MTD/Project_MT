@@ -11,47 +11,56 @@ using DevExpress.XtraEditors;
 using DTO_Data;
 using BUS_KHOHANG;
 
-
 namespace QLDACNTT_QUANLYKHO.Employee
 {
     public partial class frmEmployee : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public bus func = new bus();
-        public delegate void DelegateShow(NhanSu ns);
+        public delegate void DelegateShow(NhanVien prov);
         public frmEmployee()
         {
             InitializeComponent();
         }
+
+        //Delegate contructor
         DelegateShow ShowForm;
-        frmUpdateEmployee _frmUpdateEmployee;
+
+        //Form
+        frmUpdateEmployee updateEmployee;
 
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             loadData();
         }
-        private void loadData()
+        #region Methods of form
+        private NhanVien GetData(int id)
         {
-            //DataDemoDataContext db = new DataDemoDataContext();
-            //var dsNS = db.NHANSUs.ToList();
-            //gcData_Employee.DataSource = dsNS;
-            this.gcData_Employee.DataSource = func.Get_NhanSu();
-        }
-        private NhanSu GetData(int id)
-        {
-            var data = func.KiemtraNhanSu(id);
-            NhanSu prov = new NhanSu();
+            var data = func.KiemtraNhanVien(id);
+            NhanVien prov = new NhanVien();
 
             if (data != null)
             {
                 var x = data.ToList();
-
-                prov.IdNhanSu = x[0].idnhansu;
-                prov.DienThoai = x[0].dienthoai;
-                prov.TenNhanSu = x[0].tennhansu;
-                prov.DiaChi = x[0].diachi;
+                foreach (var item in x)
+                {
+                    prov.IdNhanVien = item.idnhansu;
+                    prov.TenNhanVien = item.tennhansu;
+                    prov.Gioitinh = item.gioitinh.ToString();
+                    prov.DiaChi = item.diachi;
+                    prov.DienThoai = item.dienthoai;
+                    prov.Email = item.email;
+                    prov.ChucVu = item.chucvu;
+                    prov.NgayVaoLam = item.ngayvaolam;
+                }
                 return prov;
             }
             return null;
+        }
+        #endregion
+        private void loadData()
+        {
+            gcData_Employee.DataSource = func.Get_NhanVien();
+
         }
         private void barbtnUpdateEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -68,46 +77,44 @@ namespace QLDACNTT_QUANLYKHO.Employee
             object value = gvData_Employee.GetRowCellValue(row_index, col_fieldname);
             if (value != null)
             {
-                frmUpdateEmployee _frmUpdateEmployee = new frmUpdateEmployee();
-                _frmUpdateEmployee.Id = (int)(value);
-                _frmUpdateEmployee.isAdd = false;
-                _frmUpdateEmployee.ShowDialog();
+                updateEmployee = new frmUpdateEmployee();
+                ShowForm = new DelegateShow(updateEmployee.showData);       //Gọi sang hàm bên FrmUpdateProvider
+                ShowForm(GetData((int)value));
+                updateEmployee.ShowDialog();
                 loadData();
             }
             else
             {
-                XtraMessageBox.Show("Chưa chọn nhà cung cấp để chỉnh sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Chưa chọn nhân sự để chỉnh sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void barbtnDelEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (XtraMessageBox.Show("Bạn có muốn xoá nhân viên đang chọn?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //    int row_index = gvData_Employee.FocusedRowHandle;
-            //    string col_fieldname = "idnhansu";
-            //    string nameEmployee = "tennhansu";
-            //    object value = gvData_Employee.GetRowCellValue(row_index, col_fieldname);
-            //    object valueNameEmployee = gvData_Employee.GetRowCellValue(row_index, nameEmployee);
-            //    if (value != null)
-            //    {
-
-            //        DataDemoDataContext db = new DataDemoDataContext();
-            //        var _nhansu = db.NHANSUs.Where(s => s.idnhansu == (int)value).SingleOrDefault();
-            //        //XtraMessageBox.Show("Id có giá trị là: " + value.ToString());
-            //        if (_nhansu != null)
-            //        {
-            //            db.NHANSUs.DeleteOnSubmit(_nhansu);
-            //            db.SubmitChanges();
-            //            XtraMessageBox.Show("Đã xoá thành công nhân viên: " + valueNameEmployee.ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            loadData();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        XtraMessageBox.Show("Chưa chọn nhân viên cần xoá!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    }
-            //}
+            if (XtraMessageBox.Show("Bạn có muốn xoá nhân viên đang chọn?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int row_index = gvData_Employee.FocusedRowHandle;
+                string col_fieldname = "idnhansu";
+                string name = "tennhansu";
+                object value = gvData_Employee.GetRowCellValue(row_index, col_fieldname);
+                object valueName = gvData_Employee.GetRowCellValue(row_index, name);
+                if (value != null)
+                {
+                    if (func.Delete_NhanVien((int)value))
+                    {
+                        XtraMessageBox.Show("Đã xoá thành công nhân viên: " + valueName.ToString().ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadData();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Quá trình xóa đã gặp vấn đề: " + valueName.ToString().ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Chưa chọn nhân viên cần xoá!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
         private void barbtnClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

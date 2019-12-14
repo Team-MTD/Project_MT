@@ -1294,7 +1294,7 @@
     </member>
     <member name="T:DevExpress.DataAccess.DataFederation.ISelectExpression">
       <summary>
-        <para>Defines a column in the resulting data set that a federated query returns.</para>
+        <para>Defines a node that can contain a SELECT expression.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.DataFederation.JoinElement">
@@ -3817,7 +3817,7 @@
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.Fill">
       <summary>
-        <para>Populates the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> object with JSON data.</para>
+        <para>Populates the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> object with data.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.Fill(System.Collections.Generic.IEnumerable{DevExpress.Data.IParameter})">
@@ -4097,6 +4097,12 @@
         <para>Gets or sets the type of data stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</para>
       </summary>
       <value>The type of data to be stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Value">
+      <summary>
+        <para>Gets or sets a reference to the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object that defines the JsonSchemaNode.</para>
+      </summary>
+      <value>An object that defines the JSON schema node.</value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonSourceBase">
       <summary>
@@ -5035,21 +5041,6 @@
         <para>Default value: &quot;The following database provider is not supported: {0}.&quot;</para>
       </summary>
     </member>
-    <member name="F:DevExpress.DataAccess.Localization.DataAccessStringId.ProviderNotSupportedFeatureExceptionHeader">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.Localization.DataAccessStringId.ProviderNotSupportedFeatureParametersInSelect">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.Localization.DataAccessStringId.ProviderNotSupportedLabel">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="F:DevExpress.DataAccess.Localization.DataAccessStringId.QueriesFailedToExecute_ExceptionMessage">
       <summary>
         <para>Default value: &quot;One or more queries have failed to execute.&quot;</para>
@@ -5476,9 +5467,9 @@
     </member>
     <member name="P:DevExpress.DataAccess.Node`1.Value">
       <summary>
-        <para>Gets or sets a reference to the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object that defines the JsonSchemaNode.</para>
+        <para></para>
       </summary>
-      <value>An object that defines the JSON schema node.</value>
+      <value></value>
     </member>
     <member name="N:DevExpress.DataAccess.ObjectBinding">
       <summary>
@@ -9223,7 +9214,7 @@
         <para>Returns the schema of an SQL data source.</para>
       </summary>
       <param name="loadColumns">true, to load data tables along with their columns; otherwise, false.</param>
-      <param name="schemaLoadingMode">A SchemaLoadingMode enumeration value.</param>
+      <param name="schemaLoadingMode">A  enumeration value.</param>
       <returns>A <see cref="T:DevExpress.DataAccess.Sql.DBSchema"/> object.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Sql.SqlDataConnection.GetDBSchema(System.String[])">

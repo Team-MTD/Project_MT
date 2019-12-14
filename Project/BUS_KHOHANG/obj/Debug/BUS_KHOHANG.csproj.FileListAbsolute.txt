@@ -26,3 +26,16 @@ C:\Users\phamh\source\repos\Quanlykho\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.
 C:\Users\phamh\source\repos\Quanlykho\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.csproj.CopyComplete
 C:\Users\phamh\source\repos\Quanlykho\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.dll
 C:\Users\phamh\source\repos\Quanlykho\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\BUS_KHOHANG.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\BUS_KHOHANG.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\DAL_KHOHANG.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\DTO_Data.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\Provider.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\DAL_KHOHANG.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\DTO_Data.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\Provider.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\bin\Debug\Provider.dll.config
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.csprojAssemblyReference.cache
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.csproj.CopyComplete
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\BUS_KHOHANG\obj\Debug\BUS_KHOHANG.pdb

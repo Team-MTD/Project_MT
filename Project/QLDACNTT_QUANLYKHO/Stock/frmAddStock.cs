@@ -8,20 +8,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using BUS_KHOHANG;
+using DTO_Data;
+using Provider;
 
 namespace QLDACNTT_QUANLYKHO.Stock
 {
     public partial class frmAddStock : DevExpress.XtraEditors.XtraForm
     {
+        public bus func = new bus();
+        bus bus = new bus();
+        List<KHO> provider;
         public frmAddStock()
         {
             InitializeComponent();
         }
-        public int Id = -1;
-        public bool isAdd = true;
+        public void showData(Kho pro)
+        {
+            txtidStock.Text = pro.MaKho;
+            txtnameStock.Text = pro.TenKho;
+            txtlocationStock.Text = pro.ViTriKho;
+        }
         private void frmAddStock_Load(object sender, EventArgs e)
         {
-            fillData();
+            
         }
         private void fillData()
         {
@@ -39,85 +49,56 @@ namespace QLDACNTT_QUANLYKHO.Stock
             //    }
             //}
         }
-        private bool save()
-        {
-            String _idStock = "";
-            String _nameStock = "";
-            String _locationStock = "";
-            if (txtidStock.EditValue != null)
-                _idStock = txtidStock.EditValue.ToString();
-            else
-            {
-                XtraMessageBox.Show("Bạn chưa nhập mã kho!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtidStock.Focus();
-                return false;
-            }
-            if (txtnameStock.EditValue != null)
-                _nameStock = txtnameStock.EditValue.ToString();
-            else
-            {
-                XtraMessageBox.Show("Bạn chưa nhập tên kho!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtnameStock.Focus();
-                return false;
-            }
-            if (txtlocationStock.EditValue != null)
-                _locationStock = txtlocationStock.EditValue.ToString();
-            else
-            {
-                XtraMessageBox.Show("Bạn chưa nhập vị trí kho!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtlocationStock.Focus();
-                return false;
-            }
-            //try
-            //{
-            //    DataDemoDataContext db = new DataDemoDataContext();
-            //    KHO _kho = null;
-            //    if (isAdd)
-            //    {
-            //        _kho = new KHO();
-            //    }
-            //    else
-            //    {
-            //        _kho = db.KHOs.Where(s => s.idkho == Convert.ToString(Id)).SingleOrDefault();
-            //    }
-            //    _kho.idkho = _idStock;
-            //    _kho.tenkho = _nameStock;
-            //    _kho.vitrikho = _locationStock;
-            //    if (isAdd)
-            //    {
-            //        db.KHOs.InsertOnSubmit(_kho);   
-            //    }
-            //    db.SubmitChanges();
-            //    if (isAdd)
-            //    {
-            //        XtraMessageBox.Show("Thêm kho mới thành công: " +
-            //        "\nMã kho: " + _idStock +
-            //        "\nTên kho: " + _nameStock +
-            //        "\nVị trí kho: " + _locationStock , "Thông báo",
-            //         MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    else
-            //    {
-            //        XtraMessageBox.Show("Chỉnh sửa thông tin kho thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    if (isAdd)
-            //    {
-            //        txtidStock.EditValue = null;
-            //        txtnameStock.EditValue = null;
-            //        txtlocationStock.EditValue = null;
-            //    }
-            //    txtidStock.Focus();
-            //    return true;
-            //}
-            //catch (Exception)
-            //{
-            //    return false;
-            //}
-            return false;
-        }
+        
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            save();
+            if (txtidStock.Text != "" && txtnameStock.Text != "" && txtlocationStock.Text != "")
+            {
+                try
+                {
+                    var kho = new Kho()
+                    {
+                        MaKho = txtidStock.Text,
+                        TenKho = txtnameStock.Text,
+                        ViTriKho = txtlocationStock.Text
+                    };
+                    // Kiểm tra nếu sản phẩm tồn tại:
+                    var x = func.TimKiemKho(kho.MaKho);
+                    if (x.ToList().Count > 0)
+                    {
+                        // Cập nhật sản phẩm
+                        if (func.Update_KH(kho))
+                        {
+                            XtraMessageBox.Show("Cập nhật sản phẩm thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Có vấn đề trong quá trình cập nhật ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        // Thêm sản phẩm mới
+                        if (func.Insert_KH(kho))
+                        {
+                            XtraMessageBox.Show("Đã thêm thành công sản phẩm: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Lỗi: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+            }
+            this.Close();
         }
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

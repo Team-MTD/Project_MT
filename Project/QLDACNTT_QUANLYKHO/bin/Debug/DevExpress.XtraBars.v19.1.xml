@@ -1206,12 +1206,6 @@ This option is in effect if you subscribed to the parent BarManager&#39;s <see c
       <param name="ownerControl">An Object that owns this <see cref="T:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel"/>.</param>
       <param name="parentLookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object associated with this <see cref="T:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel"/>.</param>
     </member>
-    <member name="M:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel.Assign(DevExpress.LookAndFeel.UserLookAndFeel)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="source"></param>
-    </member>
     <member name="P:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel.ColorScheme">
       <summary>
         <para>Gets or sets the color scheme of a Ribbon that utilizes this <see cref="T:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel"/>.</para>
@@ -1248,13 +1242,6 @@ This option is in effect if you subscribed to the parent BarManager&#39;s <see c
         <para>Gets the actual availability of touch UI mode for controls managed by the current BarAndDockingController.</para>
       </summary>
       <returns>A Boolean value that specifies the actual availability of touch UI mode for corresponding controls.</returns>
-    </member>
-    <member name="M:DevExpress.XtraBars.BarAndDockingControllerLookAndFeel.IsEquals(DevExpress.LookAndFeel.UserLookAndFeel)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="source"></param>
-      <returns></returns>
     </member>
     <member name="T:DevExpress.XtraBars.BarBaseButtonItem">
       <summary>
@@ -7404,12 +7391,6 @@ Merge-related toolbars of inactive child forms are visible in these forms, and a
         <para>Gets or sets whether dock panels are immediately hidden when their auto hide functionality is enabled.</para>
       </summary>
       <value>true to hide dock panels immediately when their auto hide functionality is enabled; false to hide dock panels using the sliding animation effect, and only when the mouse pointer leaves their area.</value>
-    </member>
-    <member name="P:DevExpress.XtraBars.Docking.DockingOptions.HidePanelsImmediately">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraBars.Docking.DockingOptions.ShowCaptionImage">
       <summary>
@@ -18501,11 +18482,6 @@ Dock Panels support &quot;Press and Tap&quot; and &quot;Two-Finger Tap&quot; ges
         <para>A description for the Show Tabs mode in the display options drop-down switcher.</para>
       </summary>
     </member>
-    <member name="F:DevExpress.XtraBars.Localization.BarString.RibbonSearchItemNoMatchesFound">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="F:DevExpress.XtraBars.Localization.BarString.RibbonSearchItemNullText">
       <summary>
         <para></para>
@@ -26954,11 +26930,6 @@ This option is in effect when a custom control is embedded into the gallery grou
       </summary>
       <value>A Padding structure that is the padding common to all <see cref="T:DevExpress.XtraBars.Ribbon.RecentTabItem"/> objects within this <see cref="T:DevExpress.XtraBars.Ribbon.RecentItemControl"/>.</value>
     </member>
-    <member name="E:DevExpress.XtraBars.Ribbon.RecentItemControl.SelectedItemChanging">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RecentItemControl.SelectedTab">
       <summary>
         <para>Gets or sets the currently selected tab within this <see cref="T:DevExpress.XtraBars.Ribbon.RecentItemControl"/>.</para>
@@ -27077,11 +27048,6 @@ This option is in effect when a custom control is embedded into the gallery grou
         <para>Gets or sets the distance between this panel&#39;s caption and icon.</para>
       </summary>
       <value>An Int32 value that is the distance in pixels between this panel&#39;s caption and icon.</value>
-    </member>
-    <member name="M:DevExpress.XtraBars.Ribbon.RecentPanelBase.ClearSelection">
-      <summary>
-        <para></para>
-      </summary>
     </member>
     <member name="M:DevExpress.XtraBars.Ribbon.RecentPanelBase.GetViewInfo">
       <summary>
@@ -28059,11 +28025,6 @@ This option is in effect when a custom control is embedded into the gallery grou
       </summary>
       <value>A <see cref="T:DevExpress.XtraBars.Ribbon.RibbonPageCategoryAlignment"/> value that specifies the alignment of custom page categories.</value>
     </member>
-    <member name="E:DevExpress.XtraBars.Ribbon.RibbonControl.PageCategoryClick">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="E:DevExpress.XtraBars.Ribbon.RibbonControl.PageGroupCaptionButtonClick">
       <summary>
         <para>Enables you to perform actions when end-users click group caption buttons.</para>
@@ -28974,12 +28935,6 @@ This option is in effect when a custom control is embedded into the gallery grou
       </summary>
       <value>true, if this <see cref="T:DevExpress.XtraBars.Ribbon.RibbonControl"/> displays a touch/mouse mode selector in its Quick Access Toolbar; otherwise, false.</value>
     </member>
-    <member name="P:DevExpress.XtraBars.Ribbon.RibbonOptionsTouch.ShowTouchUISelectorInSearchMenu">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonOptionsTouch.ShowTouchUISelectorVisibilityItemInQATMenu">
       <summary>
         <para>Gets or sets whether end-users can switch the touch/mouse mode selector&#39;s visibility via the Quick Access Toolbar menu.</para>
@@ -29318,12 +29273,6 @@ A specific version of the addressed image is automatically chosen based on the a
         <para>Gets the <see cref="T:DevExpress.XtraBars.Ribbon.RibbonControl"/> which owns the current category.</para>
       </summary>
       <value>The <see cref="T:DevExpress.XtraBars.Ribbon.RibbonControl"/> which owns the current category.</value>
-    </member>
-    <member name="P:DevExpress.XtraBars.Ribbon.RibbonPageCategory.ShowEmptyCategory">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonPageCategory.Tag">
       <summary>

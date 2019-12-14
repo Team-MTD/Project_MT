@@ -72,7 +72,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.Size = new System.Drawing.Size(726, 141);
             // 
             // barbtnAddProvider
@@ -176,6 +176,7 @@
             this.colPhoneNumProvider});
             this.gvData_Provider.GridControl = this.gcData_Provider;
             this.gvData_Provider.Name = "gvData_Provider";
+            this.gvData_Provider.OptionsView.ShowGroupPanel = false;
             // 
             // colidProvider
             // 

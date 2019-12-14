@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.rbControl_Tool = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -86,13 +88,12 @@
             this.skinPaletteDropDownButtonItem1,
             this.barButtonItem2});
             this.rbControl_Tool.Location = new System.Drawing.Point(0, 0);
-            this.rbControl_Tool.Margin = new System.Windows.Forms.Padding(4);
             this.rbControl_Tool.MaxItemId = 14;
             this.rbControl_Tool.Name = "rbControl_Tool";
             this.rbControl_Tool.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.rbControl_Tool.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.rbControl_Tool.Size = new System.Drawing.Size(1341, 202);
+            this.rbControl_Tool.Size = new System.Drawing.Size(894, 141);
             // 
             // barButtonItem1
             // 
@@ -105,7 +106,7 @@
             // 
             // barbtnProviderManager
             // 
-            this.barbtnProviderManager.Caption = "Quản lý nhà cung cấp";
+            this.barbtnProviderManager.Caption = "Quản lý nhà cung cấp                    ";
             this.barbtnProviderManager.Id = 2;
             this.barbtnProviderManager.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnProviderManager.ImageOptions.SvgImage")));
             this.barbtnProviderManager.Name = "barbtnProviderManager";
@@ -113,7 +114,7 @@
             // 
             // barbtnQLNhapkho
             // 
-            this.barbtnQLNhapkho.Caption = "Quản lý nhập kho";
+            this.barbtnQLNhapkho.Caption = "Quản lý nhập kho                ";
             this.barbtnQLNhapkho.Id = 3;
             this.barbtnQLNhapkho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnQLNhapkho.ImageOptions.SvgImage")));
             this.barbtnQLNhapkho.Name = "barbtnQLNhapkho";
@@ -121,7 +122,7 @@
             // 
             // barbtnQLXuatkho
             // 
-            this.barbtnQLXuatkho.Caption = "Quản lý xuất kho";
+            this.barbtnQLXuatkho.Caption = "Quản lý xuất kho                 ";
             this.barbtnQLXuatkho.Id = 4;
             this.barbtnQLXuatkho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnQLXuatkho.ImageOptions.SvgImage")));
             this.barbtnQLXuatkho.Name = "barbtnQLXuatkho";
@@ -137,7 +138,7 @@
             // 
             // barbtnProductManager
             // 
-            this.barbtnProductManager.Caption = "Quản lý sản phẩm";
+            this.barbtnProductManager.Caption = "Quản lý sản phẩm             ";
             this.barbtnProductManager.Id = 6;
             this.barbtnProductManager.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnProductManager.ImageOptions.SvgImage")));
             this.barbtnProductManager.Name = "barbtnProductManager";
@@ -147,7 +148,7 @@
             // 
             // barButtonItem7
             // 
-            this.barButtonItem7.Caption = "Báo cáo";
+            this.barButtonItem7.Caption = "Báo cáo - thống kê                          ";
             this.barButtonItem7.Id = 7;
             this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
             this.barButtonItem7.Name = "barButtonItem7";
@@ -171,10 +172,14 @@
             // 
             // barbtnEmployee
             // 
-            this.barbtnEmployee.Caption = "Quản lý nhân sự";
+            this.barbtnEmployee.Caption = "Quản lý nhân sự                    ";
             this.barbtnEmployee.Id = 10;
             this.barbtnEmployee.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barbtnEmployee.ImageOptions.SvgImage")));
             this.barbtnEmployee.Name = "barbtnEmployee";
+            this.barbtnEmployee.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            toolTipTitleItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.barbtnEmployee.SuperTip = superToolTip1;
             this.barbtnEmployee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnEmployee_ItemClick);
             // 
             // barbtnStock
@@ -231,7 +236,6 @@
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnStock);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnQLNhapkho);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnQLXuatkho);
             this.ribbonPageGroup3.ItemLinks.Add(this.barbtnKiemkekho);
@@ -243,13 +247,12 @@
             this.ribbonPageGroup7.AllowTextClipping = false;
             this.ribbonPageGroup7.ItemLinks.Add(this.barbtnEmployee);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "Nhân sự";
+            this.ribbonPageGroup7.Text = "       Nhân sự      ";
             // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Báo cáo và thống kê";
             // 
@@ -258,23 +261,22 @@
             this.ribbonPageGroup6.AllowTextClipping = false;
             this.ribbonPageGroup6.ItemLinks.Add(this.barbtnExitApplication);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "                   ";
             // 
             // gcData_Main
             // 
             this.gcData_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gcData_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcData_Main.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcData_Main.EmbeddedNavigator.ShowToolTips = false;
             this.gcData_Main.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             gridLevelNode1.RelationName = "Level1";
             this.gcData_Main.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gcData_Main.Location = new System.Drawing.Point(0, 202);
+            this.gcData_Main.Location = new System.Drawing.Point(0, 141);
             this.gcData_Main.MainView = this.gvData_Main;
-            this.gcData_Main.Margin = new System.Windows.Forms.Padding(4);
             this.gcData_Main.Name = "gcData_Main";
             this.gcData_Main.ShowOnlyPredefinedDetails = true;
-            this.gcData_Main.Size = new System.Drawing.Size(1341, 491);
+            this.gcData_Main.Size = new System.Drawing.Size(894, 333);
             this.gcData_Main.TabIndex = 1;
             this.gcData_Main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData_Main});
@@ -288,8 +290,6 @@
             this.colloaisanpham,
             this.colnhomsanpham,
             this.coldongia});
-            this.gvData_Main.DetailHeight = 512;
-            this.gvData_Main.FixedLineWidth = 3;
             this.gvData_Main.GridControl = this.gcData_Main;
             this.gvData_Main.Name = "gvData_Main";
             this.gvData_Main.OptionsView.ShowGroupPanel = false;
@@ -305,11 +305,10 @@
             this.colidsanpham.Caption = "Mã sản phẩm";
             this.colidsanpham.FieldName = "idsanpham";
             this.colidsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colidsanpham.ImageOptions.Image")));
-            this.colidsanpham.MinWidth = 30;
             this.colidsanpham.Name = "colidsanpham";
             this.colidsanpham.Visible = true;
             this.colidsanpham.VisibleIndex = 0;
-            this.colidsanpham.Width = 141;
+            this.colidsanpham.Width = 94;
             // 
             // coltensanpham
             // 
@@ -322,11 +321,10 @@
             this.coltensanpham.Caption = "Tên sản phẩm";
             this.coltensanpham.FieldName = "tensanpham";
             this.coltensanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("coltensanpham.ImageOptions.Image")));
-            this.coltensanpham.MinWidth = 30;
             this.coltensanpham.Name = "coltensanpham";
             this.coltensanpham.Visible = true;
             this.coltensanpham.VisibleIndex = 1;
-            this.coltensanpham.Width = 330;
+            this.coltensanpham.Width = 220;
             // 
             // coldonvi
             // 
@@ -339,11 +337,10 @@
             this.coldonvi.Caption = "Đơn vị tính";
             this.coldonvi.FieldName = "donvi";
             this.coldonvi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("coldonvi.ImageOptions.Image")));
-            this.coldonvi.MinWidth = 30;
             this.coldonvi.Name = "coldonvi";
             this.coldonvi.Visible = true;
             this.coldonvi.VisibleIndex = 2;
-            this.coldonvi.Width = 127;
+            this.coldonvi.Width = 85;
             // 
             // colloaisanpham
             // 
@@ -356,11 +353,10 @@
             this.colloaisanpham.Caption = "Loại sản phẩm";
             this.colloaisanpham.FieldName = "loaisanpham";
             this.colloaisanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colloaisanpham.ImageOptions.Image")));
-            this.colloaisanpham.MinWidth = 30;
             this.colloaisanpham.Name = "colloaisanpham";
             this.colloaisanpham.Visible = true;
             this.colloaisanpham.VisibleIndex = 3;
-            this.colloaisanpham.Width = 220;
+            this.colloaisanpham.Width = 147;
             // 
             // colnhomsanpham
             // 
@@ -373,11 +369,10 @@
             this.colnhomsanpham.Caption = "Nhóm sản phẩm";
             this.colnhomsanpham.FieldName = "nhomsanpham";
             this.colnhomsanpham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colnhomsanpham.ImageOptions.Image")));
-            this.colnhomsanpham.MinWidth = 30;
             this.colnhomsanpham.Name = "colnhomsanpham";
             this.colnhomsanpham.Visible = true;
             this.colnhomsanpham.VisibleIndex = 4;
-            this.colnhomsanpham.Width = 207;
+            this.colnhomsanpham.Width = 138;
             // 
             // coldongia
             // 
@@ -392,11 +387,10 @@
             this.coldongia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.coldongia.FieldName = "dongia";
             this.coldongia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("coldongia.ImageOptions.Image")));
-            this.coldongia.MinWidth = 30;
             this.coldongia.Name = "coldongia";
             this.coldongia.Visible = true;
             this.coldongia.VisibleIndex = 5;
-            this.coldongia.Width = 174;
+            this.coldongia.Width = 116;
             // 
             // ribbonPageGroup1
             // 
@@ -407,14 +401,13 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1341, 693);
+            this.ClientSize = new System.Drawing.Size(894, 474);
             this.Controls.Add(this.gcData_Main);
             this.Controls.Add(this.rbControl_Tool);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.InactiveGlowColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ KHO SẢN PHẨM NHÀ SÁCH CHÂU";

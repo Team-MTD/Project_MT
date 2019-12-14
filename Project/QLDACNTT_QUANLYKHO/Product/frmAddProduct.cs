@@ -87,6 +87,7 @@ namespace QLDACNTT_QUANLYKHO
                     var x = func.TimKiemSanPham(product.IdSanPham);
                     if (x.ToList().Count>0)
                     {
+                        
                         // Cập nhật sản phẩm
                         if (func.Update_SanPham(product))
                         {

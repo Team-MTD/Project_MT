@@ -1875,12 +1875,6 @@
       </summary>
       <value>The default export mode.</value>
     </member>
-    <member name="P:DevExpress.Export.ExportSettings.EncodeCsvExecutableContent">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
     <member name="T:DevExpress.Export.ExportType">
       <summary>
         <para>Lists the values corresponding to the different export modes available when saving a document to the XLS, XLSX and CSV formats.</para>
@@ -14269,7 +14263,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.BarCodeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.BarCodeBrick.Alignment">
       <summary>
@@ -14411,7 +14405,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.BookmarkInfo"/> class with the specified settings.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.BrickOwner"/> property.</param>
+      <param name="brickOwner">An object implementing the  interface. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.BrickOwner"/> property.</param>
       <param name="bookmark">A <see cref="T:System.String"/> value. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.Bookmark"/> property.</param>
       <param name="bookmarkParentInfo">A <see cref="T:DevExpress.XtraPrinting.BookmarkInfo"/> object. This value is assigned to the <see cref="P:DevExpress.XtraPrinting.BookmarkInfo.ParentInfo"/> property.</param>
     </member>
@@ -14425,7 +14419,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Provides access to the bookmark&#39;s owner brick.</para>
       </summary>
-      <value>An object implementing the IBrickOwner interface.</value>
+      <value>An object implementing the  interface.</value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BookmarkInfo.Empty">
       <summary>
@@ -15554,7 +15548,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.CharacterCombBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.CharacterCombBrick.BrickType">
       <summary>
@@ -15645,7 +15639,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.CheckBoxBrick.BrickType">
       <summary>
@@ -15976,12 +15970,6 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
         <para>Copies all the settings from the <see cref="T:DevExpress.XtraPrinting.CsvExportOptions"/> object passed as a parameter.</para>
       </summary>
       <param name="source">An <see cref="T:DevExpress.XtraPrinting.CsvExportOptions"/> object (which is the <see cref="T:DevExpress.XtraPrinting.ExportOptionsBase"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
-    <member name="P:DevExpress.XtraPrinting.CsvExportOptions.EncodeExecutableContent">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptions.FollowReportLayout">
       <summary>
@@ -18152,7 +18140,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ImageBrick.BrickType">
       <summary>
@@ -18459,7 +18447,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.LabelBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.LabelBrick.Angle">
       <summary>
@@ -18505,7 +18493,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.LineBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.LineBrick.BrickType">
       <summary>
@@ -19816,7 +19804,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PageInfoTextBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageInfoTextBrick.BrickType">
       <summary>
@@ -19878,7 +19866,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>For internal use. Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PageInfoTextBrickBase"/> class with the specified brick owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageInfoTextBrickBase.Format">
       <summary>
@@ -20262,7 +20250,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PanelBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PanelBrick.Bricks">
       <summary>
@@ -21940,7 +21928,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ProgressBarBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="M:DevExpress.XtraPrinting.ProgressBarBrick.#ctor(System.Int32)">
       <summary>
@@ -22648,7 +22636,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ShapeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ShapeBrick.Angle">
       <summary>
@@ -22823,7 +22811,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.TextBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.TextBrick.BrickType">
       <summary>
@@ -23110,7 +23098,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.VisualBrick.BackColor">
       <summary>
@@ -23152,7 +23140,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Gets the owner of this brick.</para>
       </summary>
-      <value>An object, which implements the IBrickOwner interface.</value>
+      <value>An object, which implements the  interface.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.VisualBrick.BrickType">
       <summary>
@@ -24769,7 +24757,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.ZipCodeBrick"/> class with the specified owner.</para>
       </summary>
-      <param name="brickOwner">An object implementing the IBrickOwner interface.</param>
+      <param name="brickOwner">An object implementing the  interface.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.ZipCodeBrick.BrickType">
       <summary>

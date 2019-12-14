@@ -5742,7 +5742,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
     </member>
     <member name="P:DevExpress.XtraCharts.CrosshairOptions.ShowOutOfRangePoints">
       <summary>
-        <para>Gets or sets the value that specifies whether the Crosshair cursor should show points that are out of a y-axis&#39;s visual range.</para>
+        <para>Gets or sets the value specifying whether the Crosshair cursor should show points that are out of visual range.</para>
       </summary>
       <value>true if the out of visual range points should be shown in the Crosshair label; otherwise false.</value>
     </member>
@@ -12327,6 +12327,16 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>An array of <see cref="T:System.String"/> objects containing the text of a multiline title.</value>
     </member>
+    <member name="N:DevExpress.XtraCharts.Native">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.XtraCharts.Native.SelectedItemCollection">
+      <summary>
+        <para>Represents a collection of selected chart elements (points and series) including business objects, in the case of data binding.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraCharts.NestedDoughnutSeriesLabel">
       <summary>
         <para>Defines label settings for Nested doughnut series.</para>
@@ -17921,9 +17931,9 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
     </member>
     <member name="P:DevExpress.XtraCharts.ScaleOptionsBase.ScaleMode">
       <summary>
-        <para>Gets or sets the scale mode for an axis.</para>
+        <para>Gets or sets the  scale mode for an axis.</para>
       </summary>
-      <value>A scale mode.</value>
+      <value>A <see cref="T:DevExpress.XtraCharts.ScaleMode"/> which represents the axis&#39; date-time or numeric scale mode.</value>
     </member>
     <member name="T:DevExpress.XtraCharts.ScaleType">
       <summary>

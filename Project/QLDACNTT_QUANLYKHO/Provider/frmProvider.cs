@@ -75,7 +75,7 @@ namespace QLDACNTT_QUANLYKHO
                 {
                     if (func.Delete_NhaCC((int)value))
                     {
-                        XtraMessageBox.Show("Đã xoá thành công sản phẩm: " + valueNameProvider.ToString().ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show("Đã xoá thành công nhà cung cấp: " + valueNameProvider.ToString().ToString(), "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData();
                     }
                     else
@@ -85,7 +85,7 @@ namespace QLDACNTT_QUANLYKHO
                 }
                 else
                 {
-                    XtraMessageBox.Show("Chưa chọn sản phẩm cần xoá!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show("Chưa chọn nhà cung cấp cần xoá!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

@@ -4,6 +4,11 @@
     <name>DevExpress.DataAccess.v19.1.UI</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.DataAccess.UI">
+      <summary>
+        <para>Provides controls that allow you to work with data sets.</para>
+      </summary>
+    </member>
     <member name="N:DevExpress.DataAccess.UI.Design">
       <summary>
         <para>Contains classes that define the UI settings of applications providing Data Access functionality.</para>
@@ -28,6 +33,11 @@
     <member name="M:DevExpress.DataAccess.UI.Design.DataSourceOptionsContainer.Reset">
       <summary>
         <para>Restore the default data source settings.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.DataAccess.UI.EntityFramework">
+      <summary>
+        <para>This namespace is no longer used.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.UI.EntityFramework.EditFiltersContext">
@@ -221,9 +231,9 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.#ctor(System.Func{DevExpress.XtraEditors.FilterControl})">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the FilterEditorControl class.</para>
       </summary>
-      <param name="getFilterControl"></param>
+      <param name="getFilterControl">Returns the <see cref="T:DevExpress.XtraEditors.FilterControl"/> object embedded in this FilterEditorControl.</param>
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ActiveEditor">
       <summary>
@@ -300,11 +310,6 @@
       </summary>
       <value>A BorderStyles enumeration value that specifies the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> border style.</value>
     </member>
-    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.ClearFilter">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.FilterChanged">
       <summary>
         <para>Fires when the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>&#39;s criteria changes.</para>
@@ -364,7 +369,7 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.LayoutChanged">
       <summary>
-        <para></para>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
       </summary>
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.LevelIndent">
@@ -393,14 +398,8 @@
     </member>
     <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.QueryCustomFunctions">
       <summary>
-        <para></para>
+        <para>Allows you to add custom function based filters (for example, &#39;discount is more than 15%&#39;) to Excel-style pop-up filter menus and/or the filter editor.</para>
       </summary>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ReadOnly">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.SetDefaultColumn(DevExpress.XtraEditors.Filtering.FilterColumn)">
       <summary>
@@ -423,15 +422,15 @@
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowCustomFunctions">
       <summary>
-        <para></para>
+        <para>Gets or sets whether to show custom function-based filters.</para>
       </summary>
-      <value></value>
+      <value>True to show custom function-based filters; False to not show them; Default to enable/disable custom function-based filters depending on the global <see cref="F:DevExpress.XtraEditors.WindowsFormsSettings.DefaultSettingsCompatibilityMode"></see> setting.</value>
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowDateTimeFunctions">
       <summary>
-        <para></para>
+        <para>Gets or sets whether to show the standard and advanced date-time functions (BeyondThisYear, LaterThisYear, Tomorrow, Today, Yesterday, LastWeek, etc.) for date-time fields.</para>
       </summary>
-      <value></value>
+      <value>A DateTimeFunctionsShowMode enumaration value that specifies whether to show the standard and advanced date-time functions for date-time fields.</value>
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowDateTimeOperators">
       <summary>
@@ -459,9 +458,9 @@
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowOperandTypeIcon">
       <summary>
-        <para>Gets or sets whether the operand type icon is visible. Clicking this icon at runtime allows end-users to compare values of one filter column with values of another.</para>
+        <para>Gets or sets whether a user can swap the second operand&#39;s type (between the Value box and Field list). The Field list allows users to compare the first operand (field) with another field.</para>
       </summary>
-      <value>true, to allow end-users to swap the operand&#39;s value; otherwise, false.</value>
+      <value>true, to allow end-users to swap the second operand&#39;s type; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowToolTips">
       <summary>
@@ -1319,7 +1318,7 @@
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An IDBSchemaProvider, providing access to the schema of the SQL data base.</param>
+      <param name="dbSchemaProvider">An DevExpress.DataAccess.Sql.IDBSchemaProvider, providing access to the schema of the SQL data base.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider)">
@@ -1329,7 +1328,7 @@
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An IDBSchemaProvider, providing access to the schema of the SQL data base.</param>
+      <param name="dbSchemaProvider">An DevExpress.DataAccess.Sql.IDBSchemaProvider, providing access to the schema of the SQL data base.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
@@ -1340,7 +1339,7 @@
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
@@ -1351,7 +1350,7 @@
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
@@ -1377,12 +1376,12 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})">
       <summary>
-        <para>Use another  overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
+        <para>Use another <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.UI.Sql.EditQueryContext,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})"/> overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
       </summary>
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1390,12 +1389,12 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}},System.IServiceProvider)">
       <summary>
-        <para>Use another  overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
+        <para>Use another <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.UI.Sql.EditQueryContext,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})"/> overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
       </summary>
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1404,12 +1403,12 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}},System.IServiceProvider,DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator)">
       <summary>
-        <para>Use another  overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
+        <para>Use another <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.UI.Sql.EditQueryContext,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})"/> overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
       </summary>
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1419,24 +1418,24 @@
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})">
       <summary>
-        <para>Use another  overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
+        <para>Use another <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.UI.Sql.EditQueryContext,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})"/> overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
       </summary>
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}},System.IServiceProvider)">
       <summary>
-        <para>Use another  overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
+        <para>Use another <see cref="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.AddQuery``1(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.UI.Sql.EditQueryContext,System.Action{DevExpress.DataAccess.UI.Wizard.IWizardCustomization{``0}})"/> overload that accepts a <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> and <see cref="T:DevExpress.DataAccess.UI.Sql.EditQueryContext"/> as parameters.</para>
       </summary>
       <param name="dataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> to which the resulting query will be added.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <param name="propertyGridServices">An object implementing the <see cref="T:System.IServiceProvider"/> interface that provides access to services managing property grid functionality.</param>
@@ -1662,7 +1661,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An IDBSchemaProvider, providing access to the schema of the SQL data base</param>
+      <param name="dbSchemaProvider">An DevExpress.DataAccess.Sql.IDBSchemaProvider, providing access to the schema of the SQL data base</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.EditQuery(DevExpress.DataAccess.Sql.SqlQuery,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider)">
@@ -1672,7 +1671,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> object.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
@@ -1683,7 +1682,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> object.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
@@ -1694,7 +1693,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> object.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
@@ -1725,7 +1724,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the xref:DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1738,7 +1737,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1752,7 +1751,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="repositoryItemsProvider">An object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.Services.IRepositoryItemsProvider"/> interface that provides repository items for editing query parameters.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
@@ -1767,7 +1766,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
@@ -1779,7 +1778,7 @@
       <param name="query">A <see cref="T:DevExpress.DataAccess.Sql.SqlQuery"/> to be edited.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <param name="propertyGridServices">An object implementing the System.IServiceProvider interface that provides access to services managing property grid functionality.</param>
@@ -1848,7 +1847,7 @@
       <param name="sqlDataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> object, specifying the database connection.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.ManageQueries(DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,DevExpress.DataAccess.Sql.IDBSchemaProvider,DevExpress.DataAccess.Wizard.Services.IParameterService)">
@@ -1858,7 +1857,7 @@
       <param name="sqlDataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> object, specifying the database connection.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
@@ -1869,7 +1868,7 @@
       <param name="sqlDataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> object, specifying the database connection.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
@@ -1881,7 +1880,7 @@
       <param name="sqlDataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> object, specifying the database connection.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <param name="parameterService">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.IParameterService"/> interface.</param>
       <param name="callback">A <see cref="T:System.Action"/> delegate of an object implementing the <see cref="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1"/> interface.</param>
       <param name="customQueryValidator">An object implementing the <see cref="T:DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator"/> interface, which provides custom query validation logic.</param>
@@ -1935,7 +1934,7 @@
       <param name="sqlDataSource">A <see cref="T:DevExpress.DataAccess.Sql.SqlDataSource"/> object, specifying the database connection.</param>
       <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object, specifying the application&#39;s look and feel settings.</param>
       <param name="owner">An object implementing the <see cref="T:System.Windows.Forms.IWin32Window"/> interface that is the owner of the current dialog window.</param>
-      <param name="dbSchemaProvider">An object implementing the IDBSchemaProvider interface.</param>
+      <param name="dbSchemaProvider">An object implementing the DevExpress.DataAccess.Sql.IDBSchemaProvider interface.</param>
       <returns>true, if the dialog was finished by clicking the OK button; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.UI.Sql.SqlDataSourceUIHelper.RebuildResultSchema(DevExpress.DataAccess.Sql.SqlDataSource)">
@@ -1977,6 +1976,11 @@
     <member name="F:DevExpress.DataAccess.UI.Sql.SqlEditorId.Query">
       <summary>
         <para>Identifies the Query Editor.</para>
+      </summary>
+    </member>
+    <member name="N:DevExpress.DataAccess.UI.Wizard">
+      <summary>
+        <para>Contains classes used to manage UI settings of the Data Source wizard and Query Builder.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.UI.Wizard.IWizardCustomization`1">
@@ -2405,60 +2409,6 @@
       </summary>
       <value>A <see cref="T:DevExpress.DataAccess.Excel.ExcelSourceOptionsBase"/> descendant containing options used to extract data from the selected file.</value>
     </member>
-    <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.#ctor">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.#ctor(System.Char)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="value"></param>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.#ctor(System.Char,System.String)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="value"></param>
-      <param name="displayName"></param>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.DisplayName">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.Equals(System.Object)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="obj"></param>
-      <returns></returns>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.GetHashCode">
-      <summary>
-        <para></para>
-      </summary>
-      <returns></returns>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.ToString">
-      <summary>
-        <para></para>
-      </summary>
-      <returns></returns>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseFileOptionsPageView.ValueSeparator.Value">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
     <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseFilePageView">
       <summary>
         <para>Provides a view for the Select an Excel Workbook or CSV File page of the Data Source Wizard in WinForms applications.</para>
@@ -2717,67 +2667,6 @@
       <param name="items">A collection of <see cref="T:DevExpress.DataAccess.ObjectBinding.ObjectMember"/> objects containing settings of object members.</param>
       <param name="staticType">A value that specifies whether binding to an object member (not to the entire object) is selected.</param>
       <param name="showAll">The state of the Show only highlighted members check box.</param>
-    </member>
-    <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="M:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item.#ctor(DevExpress.DataAccess.ObjectBinding.ObjectMember,System.String)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="data"></param>
-      <param name="description"></param>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item.Data">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item.Description">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item.Highlighted">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Item.MemberType">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="T:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.MemberType">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.MemberType.Method">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.MemberType.Property">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.MemberType.StaticMethod">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.MemberType.StaticProperty">
-      <summary>
-        <para></para>
-      </summary>
     </member>
     <member name="P:DevExpress.DataAccess.UI.Wizard.Views.ChooseObjectMemberPageView.Result">
       <summary>

@@ -147,11 +147,6 @@
         <para>&quot;The form field name cannot contain a period character.&quot;</para>
       </summary>
     </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectAction">
-      <summary>
-        <para>&quot;The specified action does not belong to the current document.&quot;</para>
-      </summary>
-    </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectBookmarkListValue">
       <summary>
         <para>&quot;Bookmark list can&#39;t be null.&quot;</para>
@@ -185,11 +180,6 @@
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectDashPatternArraySize">
       <summary>
         <para>&quot;The dash pattern array must not be empty.&quot;</para>
-      </summary>
-    </member>
-    <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectDestination">
-      <summary>
-        <para>&quot;The specified destination does not belong to the current document.&quot;</para>
       </summary>
     </member>
     <member name="F:DevExpress.Pdf.Localization.PdfCoreStringId.MsgIncorrectDestinationPage">
@@ -2036,12 +2026,6 @@
         <para>Represents an action that is performed with a document.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.Pdf.PdfDocumentActions.#ctor(DevExpress.Pdf.PdfDocument)">
-      <summary>
-        <para></para>
-      </summary>
-      <param name="document"></param>
-    </member>
     <member name="P:DevExpress.Pdf.PdfDocumentActions.DocumentClosing">
       <summary>
         <para>Gets an action performed when the document is closing.</para>
@@ -3028,13 +3012,6 @@
         <para>An action that changes the view to a specified destination (page, location, and magnification factor).</para>
       </summary>
     </member>
-    <member name="M:DevExpress.Pdf.PdfGoToAction.#ctor(DevExpress.Pdf.PdfDocument,DevExpress.Pdf.PdfDestination)">
-      <summary>
-        <para>Initializes a new PdfGoToAction object with specified settings.</para>
-      </summary>
-      <param name="document">A target document.</param>
-      <param name="destination">A PdfDestination object that is a destination (a particular view of a document).</param>
-    </member>
     <member name="T:DevExpress.Pdf.PdfGraphicsTextOrigin">
       <summary>
         <para>Contains values that specify how to interpret a point passed to one of the  overload methods that take a PointF object as an argument.</para>
@@ -3491,13 +3468,6 @@
       <summary>
         <para>Represents a JavaScript action that executes a script that is written in the JavaScript programming language.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.Pdf.PdfJavaScriptAction.#ctor(System.String,DevExpress.Pdf.PdfDocument)">
-      <summary>
-        <para>Initializes a new PdfGoToAction object with specified settings.</para>
-      </summary>
-      <param name="javaScript">A string value that is the JavaScript code.</param>
-      <param name="document">A target document.</param>
     </member>
     <member name="P:DevExpress.Pdf.PdfJavaScriptAction.JavaScript">
       <summary>
@@ -5267,17 +5237,17 @@
     </member>
     <member name="T:DevExpress.Pdf.PdfRectangle">
       <summary>
-        <para>A rectangle used to describe locations on a page and bounding boxes for various PDF objects.</para>
+        <para>Represents a rectangle on a page.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Pdf.PdfRectangle.#ctor(System.Double,System.Double,System.Double,System.Double)">
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.Pdf.PdfRectangle"/> class with the specified settings.</para>
       </summary>
-      <param name="left">Specifies the lower left x-coordinate.</param>
-      <param name="bottom">Specifies the lower left y-coordinate.</param>
-      <param name="right">Specifies the upper right x-coordinate.</param>
-      <param name="top">Specifies the upper right y-coordinate.</param>
+      <param name="left">A <see cref="T:System.Double"/> value.</param>
+      <param name="bottom">A <see cref="T:System.Double"/> value.</param>
+      <param name="right">A <see cref="T:System.Double"/> value.</param>
+      <param name="top">A <see cref="T:System.Double"/> value.</param>
     </member>
     <member name="P:DevExpress.Pdf.PdfRectangle.Bottom">
       <summary>

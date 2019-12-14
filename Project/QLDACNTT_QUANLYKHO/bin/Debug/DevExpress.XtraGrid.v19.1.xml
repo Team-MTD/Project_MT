@@ -8183,7 +8183,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="E:DevExpress.XtraGrid.Views.Base.ColumnView.ParseFindPanelText">
       <summary>
-        <para>Fires after the query in the find panel changes. Allows you to create a filter condition based on the query and specify how to highlight results in the control.</para>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Base.ColumnView.PopulateColumns">
@@ -13071,12 +13071,6 @@ This option is in effect when the <see cref="P:DevExpress.XtraGrid.Views.Grid.Gr
       <value>true to print/export the View with all data rows visible regardless of the group rows&#39; expanded state; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsPrint.IgnoreGroupDrawMode">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
-    <member name="P:DevExpress.XtraGrid.Views.Grid.GridOptionsPrint.IgnoreHtmlDrawGroups">
       <summary>
         <para></para>
       </summary>
@@ -19598,6 +19592,12 @@ This value is used to initialize the <see cref="P:DevExpress.XtraGrid.Views.Prin
       <summary>
         <para>Closes the currently displayed Edit Form.</para>
       </summary>
+    </member>
+    <member name="P:DevExpress.XtraGrid.Views.Tile.TileView.HtmlImages">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraGrid.Views.Tile.TileView.IsGroupRow(System.Int32)">
       <summary>

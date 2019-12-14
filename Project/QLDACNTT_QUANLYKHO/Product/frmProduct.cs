@@ -13,10 +13,7 @@ namespace QLDACNTT_QUANLYKHO
     {
         public bus func = new bus();
         public delegate void DelegateShow(Product pro);
-
-
-
-
+                     
         //Delegate contructor
         DelegateShow ShowForm;
 
@@ -124,6 +121,7 @@ namespace QLDACNTT_QUANLYKHO
 
         private void barbtnEdit_Product_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             int row_index = gvData_Product.FocusedRowHandle;
             string col_fieldname = "idsanpham";
             object value = gvData_Product.GetRowCellValue(row_index, col_fieldname);

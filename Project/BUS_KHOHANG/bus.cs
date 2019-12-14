@@ -25,12 +25,11 @@ namespace BUS_KHOHANG
             return nhacc;
         }
         // Load Nhan su
-        public IQueryable<NHANSU> Get_NhanSu()
+        public IQueryable<NHANSU> Get_NhanVien()
         {
-            var nhansu = data.Load_NhanSu();
-            return nhansu;
+            var nhanvien = data.Load_NhanVien();
+            return nhanvien;
         }
-
         #region // Sản Phẩm
         // Tim Kiem San Pham
         public IQueryable<SANPHAM> TimKiemSanPham(string id)
@@ -38,17 +37,36 @@ namespace BUS_KHOHANG
             var sp = data.Check_SP(id);
             return sp;
         }
-     
+        public IQueryable<KHO> TimKiemKho(string id)
+        {
+            var sp = data.Check_KH(id);
+            return sp;
+        }
+        #region GIỚI TÍNH     ...............
+        public IQueryable<NHANSU> TimGioitinh(string id)
+        {
+            var sp = data.Check_GT(id);
+            return sp;
+        }
+        #endregion
 
         //Them San Pham
         public bool Insert_SanPham(Product sp)
         {
             return data.AddNew_SP(sp);
         }
+        public bool Insert_KH(Kho sp)
+        {
+            return data.AddNew_KH(sp);
+        }
         //Xoa San Pham
         public bool Delete_SanPham(string id)
         {
             return data.Delete_SP(id);
+        }
+        public bool Delete_KH(string id)
+        {
+            return data.Delete_KH(id);
         }
 
         //Update San Pham
@@ -56,7 +74,10 @@ namespace BUS_KHOHANG
         {
             return data.Update_SP(sp);
         }
-
+        public bool Update_KH(Kho sp)
+        {
+            return data.Update_KH(sp);
+        }
         #endregion
 
 
@@ -70,9 +91,9 @@ namespace BUS_KHOHANG
             return sp;
         }
         // Tim Kiem Nhan su
-        public IQueryable<NHANSU> KiemtraNhanSu(int id)
+        public IQueryable<NHANSU> KiemtraNhanVien(int id)
         {
-            var sp = data.Check_NhanSu(id);
+            var sp = data.Check_NhanVien(id);
             return sp;
         }
 
@@ -82,9 +103,9 @@ namespace BUS_KHOHANG
             return data.AddNew_NhaCC(nhacc);
         }
         //Tạo mới nhan su
-        public bool Insert_NhanSu(NhanSu nhanSu)
+        public bool Insert_NhanVien(NhanVien nhanVien)
         {
-            return data.AddNew_Nhansu(nhanSu);
+            return data.AddNew_NhanVien(nhanVien);
         }
         //Xóa nhà cung cấp
         public bool Delete_NhaCC(int id)
@@ -92,9 +113,9 @@ namespace BUS_KHOHANG
             return data.Delete_NhaCC(id);
         }
         //Xóa nhan su
-        public bool Delete_NhanSu(int id)
+        public bool Delete_NhanVien(int id)
         {
-            return data.Delete_NhanSu(id);
+            return data.Delete_NhanVien(id);
         }
 
         //Cập nhật lại nhà cung cấp
@@ -103,9 +124,9 @@ namespace BUS_KHOHANG
             return data.Update_NhaCC(nhacc);
         }
         //Cập nhật lại nhan su
-        public bool Update_NhanSu(NhanSu nhanSu)
+        public bool Update_NhanVien(NhanVien nhanVien)
         {
-            return data.Update_NhanSu(nhanSu);
+            return data.Update_NhanVien(nhanVien);
         }
         #endregion
 

@@ -8334,12 +8334,6 @@
       </summary>
       <value></value>
     </member>
-    <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsOLAP.PrefilterUsingWhereClause">
-      <summary>
-        <para></para>
-      </summary>
-      <value></value>
-    </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsOLAP.ServerDefinedDrillDownColumns">
       <summary>
         <para>Gets or sets whether or not a server determines which columns are returned when obtaining drill down data.</para>

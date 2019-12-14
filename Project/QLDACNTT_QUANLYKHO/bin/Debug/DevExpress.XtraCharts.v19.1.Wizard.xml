@@ -1378,11 +1378,6 @@
       </summary>
       <value>true if the warning should be shown; otherwize false.</value>
     </member>
-    <member name="E:DevExpress.XtraCharts.Designer.ChartDesigner.HelpRequested">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="P:DevExpress.XtraCharts.Designer.ChartDesigner.Icon">
       <summary>
         <para>Gets or sets the Designer form icon.</para>
