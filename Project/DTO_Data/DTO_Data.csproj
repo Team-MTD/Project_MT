@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NhanSu.cs" />
+    <Compile Include="Kho.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="NhapKho.cs" />
     <Compile Include="NhaCC.cs" />
     <Compile Include="Phieukiemke.cs" />

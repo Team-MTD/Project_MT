@@ -37,8 +37,43 @@ namespace DAL_KHOHANG
                 throw;
             }
         }
-        
-        
+        public IQueryable<KHO> Check_KH(string id)
+        {
+            try
+            {
+                var data = from item in ConnectDB.cnn2.KHOs
+                           where item.idkho == id.Trim()
+                           select item;
+                return data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public IQueryable<NHANSU> Check_GT(string id)
+        {
+            try
+            {
+                var data = from item in ConnectDB.cnn2.NHANSUs
+                           where item.idnhansu.ToString() == id.Trim()
+                           select item;
+                return data;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public IQueryable<KHO> Load_Kho()
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var linq = from item in connectDB.cnn.KHOs
+                       select item;
+
+            return linq;
+        }
+
 
 
         /// 
@@ -117,11 +152,77 @@ namespace DAL_KHOHANG
                 throw;
             }
         }
+        //KHO
+        // Thêm kho
+        public bool AddNew_KH(Kho product)
+        {
+            try
+            {
+                KHO pro = new KHO
+                {
+                    idkho = product.MaKho.ToString(),
+                    tenkho = product.TenKho,
+                    vitrikho = product.ViTriKho
+                };
+                ConnectDB connectDB = new ConnectDB();
+                connectDB.cnn.KHOs.InsertOnSubmit(pro);
+                connectDB.cnn.SubmitChanges();
+                return true;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return false;
+        }
+        // Xóa kho
+        public bool Delete_KH(string makho)
+        {
+            try
+            {
+                ConnectDB connectDB = new ConnectDB();
+                KHO sp = connectDB.cnn.KHOs.Single(item => item.idkho == makho);
+                connectDB.cnn.KHOs.DeleteOnSubmit(sp);
+                connectDB.cnn.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return false;
+        }
+
+        //Update KHO
+        public bool Update_KH(Kho product)
+        {
+            try
+            {
+                ConnectDB connectDB = new ConnectDB();
+                var linq = from item in connectDB.cnn.KHOs
+                           where product.MaKho.Equals(item.idkho)
+                           select item;
+                if (linq != null)
+                {
+                    KHO sp = connectDB.cnn.KHOs.Single(item => item.idkho == product.MaKho.ToString());
+                    sp.tenkho = product.TenKho;
+                    sp.vitrikho = product.ViTriKho;
+                    connectDB.cnn.SubmitChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
 
         /// NHAN SU
         /// 
-        public IQueryable<NHANSU> Load_NhanSu()
+        public IQueryable<NHANSU> Load_NhanVien()
         {
             ConnectDB connectDB=new ConnectDB();
             var linq = from item in connectDB.cnn.NHANSUs
@@ -130,21 +231,21 @@ namespace DAL_KHOHANG
             return linq;
         }
 
-        public bool AddNew_Nhansu(NhanSu nhanSu)
+        public bool AddNew_NhanVien(NhanVien nhanVien)
         {
             try
             {
                 ConnectDB connectDB=new ConnectDB();
                 NHANSU prov = new NHANSU()
                 {
-                    idnhansu = nhanSu.IdNhanSu,
-                    diachi = nhanSu.DiaChi,
-                    dienthoai = nhanSu.DienThoai,
-                    tennhansu = nhanSu.TenNhanSu,
-                    email = nhanSu.Email,
-                    //gioitinh = nhanSu.GioiTinh,
-                    chucvu = nhanSu.ChucVu,
-                    //ngayvaolam = nhanSu.NgayVaoLam,
+                    idnhansu = nhanVien.IdNhanVien,
+                    diachi = nhanVien.DiaChi,
+                    dienthoai = nhanVien.DienThoai,
+                    tennhansu = nhanVien.TenNhanVien,
+                    email = nhanVien.Email,
+                    gioitinh = nhanVien.Gioitinh,
+                    chucvu = nhanVien.ChucVu,
+                    ngayvaolam = nhanVien.NgayVaoLam  
                 };
                 connectDB.cnn.NHANSUs.InsertOnSubmit(prov);
                 connectDB.cnn.SubmitChanges();
@@ -159,19 +260,20 @@ namespace DAL_KHOHANG
             return false;
         }
 
-        public bool Update_NhanSu(NhanSu nhanSu)
+        public bool Update_NhanVien(NhanVien nhanVien)
         {
             try
             {
                 ConnectDB connectDB=new ConnectDB();
-                NHANSU sp = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == nhanSu.IdNhanSu);
+                NHANSU sp = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == nhanVien.IdNhanVien);
                 sp.idnhansu = sp.idnhansu;
-                sp.tennhansu = nhanSu.TenNhanSu;
-                sp.dienthoai = nhanSu.DienThoai;
-                sp.diachi = nhanSu.DiaChi;
-                sp.email = nhanSu.Email;
-                sp.chucvu = nhanSu.ChucVu;
-                //sp.gioitinh = nhanSu.GioiTinh;
+                sp.tennhansu = nhanVien.TenNhanVien;
+                sp.dienthoai = nhanVien.DienThoai;
+                sp.diachi = nhanVien.DiaChi;
+                sp.email = nhanVien.Email;
+                sp.chucvu = nhanVien.ChucVu;
+                sp.gioitinh = nhanVien.Gioitinh;
+                sp.ngayvaolam = nhanVien.NgayVaoLam;
                 connectDB.cnn.SubmitChanges();
                 return true;
             }
@@ -182,13 +284,13 @@ namespace DAL_KHOHANG
             }
         }
 
-        public bool Delete_NhanSu(int manhanSu)
+        public bool Delete_NhanVien(int manhanVien)
         {
             try
             {
                 ConnectDB connectDB=new ConnectDB();
-                NHANSU nhansu = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == manhanSu);
-                connectDB.cnn.NHANSUs.DeleteOnSubmit(nhansu);
+                NHANSU nhanvien = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == manhanVien);
+                connectDB.cnn.NHANSUs.DeleteOnSubmit(nhanvien);
                 connectDB.cnn.SubmitChanges();
                 return true;
             }
@@ -200,7 +302,7 @@ namespace DAL_KHOHANG
         }
 
         // Kiem tra xem nhan su đã tồn tại chưa
-        public IQueryable<NHANSU> Check_NhanSu(int id)
+        public IQueryable<NHANSU> Check_NhanVien(int id)
         {
             try
             {

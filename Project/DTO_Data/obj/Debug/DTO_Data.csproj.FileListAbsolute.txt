@@ -4,9 +4,14 @@ C:\Users\phamh\source\repos\Quanlykho\DTO_Data\obj\Debug\DTO_Data.csprojAssembly
 C:\Users\phamh\source\repos\Quanlykho\DTO_Data\obj\Debug\DTO_Data.csproj.CoreCompileInputs.cache
 C:\Users\phamh\source\repos\Quanlykho\DTO_Data\obj\Debug\DTO_Data.dll
 C:\Users\phamh\source\repos\Quanlykho\DTO_Data\obj\Debug\DTO_Data.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\DTO_Data\bin\Debug\DTO_Data.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\DTO_Data\bin\Debug\DTO_Data.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\DTO_Data\obj\Debug\DTO_Data.dll
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\DTO_Data\obj\Debug\DTO_Data.pdb
+C:\Users\MT\Desktop\PROJECT 13-12\Project_MT\Project\DTO_Data\obj\Debug\DTO_Data.csprojAssemblyReference.cache
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\bin\Debug\DTO_Data.dll
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\bin\Debug\DTO_Data.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csprojAssemblyReference.cache
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csproj.CoreCompileInputs.cache
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.dll
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.pdb
-C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csprojAssemblyReference.cache

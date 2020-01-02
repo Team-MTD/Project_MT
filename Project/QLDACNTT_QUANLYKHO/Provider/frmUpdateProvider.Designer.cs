@@ -31,15 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateProvider));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barbtnSaveAddProvider = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnExitAddProvider = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barbtnSaveAddProvider = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnExitAddProvider = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtAdd_phoneProvider = new DevExpress.XtraEditors.TextEdit();
             this.txtAdd_addressProvider = new DevExpress.XtraEditors.TextEdit();
             this.txtAdd_nameProvider = new DevExpress.XtraEditors.TextEdit();
@@ -50,6 +49,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
@@ -76,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
@@ -83,9 +84,6 @@
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -94,22 +92,39 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barbtnSaveAddProvider,
             this.barbtnExitAddProvider});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 2;
-            this.barManager1.StatusBar = this.bar3;
             // 
-            // bar2
+            // barDockControlTop
             // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnSaveAddProvider),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnExitAddProvider)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(403, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 194);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(403, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 167);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(403, 27);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 167);
             // 
             // barbtnSaveAddProvider
             // 
@@ -129,108 +144,68 @@
             this.barbtnExitAddProvider.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barbtnExitAddProvider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnExitAddProvider_ItemClick);
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 34);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(604, 34);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 367);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(604, 25);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 68);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 299);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(604, 68);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 299);
-            // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.btnLuu);
             this.layoutControl2.Controls.Add(this.txtAdd_phoneProvider);
             this.layoutControl2.Controls.Add(this.txtAdd_addressProvider);
             this.layoutControl2.Controls.Add(this.txtAdd_nameProvider);
             this.layoutControl2.Controls.Add(this.txtAdd_idProvider);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(0, 68);
-            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl2.Location = new System.Drawing.Point(0, 27);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(604, 299);
+            this.layoutControl2.Size = new System.Drawing.Size(403, 167);
             this.layoutControl2.TabIndex = 6;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // btnLuu
+            // 
+            this.btnLuu.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnLuu.ImageOptions.SvgImage = global::QLDACNTT_QUANLYKHO.Properties.Resources.saveas3;
+            this.btnLuu.Location = new System.Drawing.Point(12, 108);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(362, 38);
+            this.btnLuu.StyleController = this.layoutControl2;
+            this.btnLuu.TabIndex = 8;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // txtAdd_phoneProvider
             // 
-            this.txtAdd_phoneProvider.Location = new System.Drawing.Point(207, 108);
-            this.txtAdd_phoneProvider.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAdd_phoneProvider.Location = new System.Drawing.Point(144, 84);
             this.txtAdd_phoneProvider.MenuManager = this.barManager1;
             this.txtAdd_phoneProvider.Name = "txtAdd_phoneProvider";
-            this.txtAdd_phoneProvider.Size = new System.Drawing.Size(385, 28);
+            this.txtAdd_phoneProvider.Size = new System.Drawing.Size(230, 20);
             this.txtAdd_phoneProvider.StyleController = this.layoutControl2;
             this.txtAdd_phoneProvider.TabIndex = 7;
             // 
             // txtAdd_addressProvider
             // 
-            this.txtAdd_addressProvider.Location = new System.Drawing.Point(207, 76);
-            this.txtAdd_addressProvider.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAdd_addressProvider.Location = new System.Drawing.Point(144, 60);
             this.txtAdd_addressProvider.MenuManager = this.barManager1;
             this.txtAdd_addressProvider.Name = "txtAdd_addressProvider";
-            this.txtAdd_addressProvider.Size = new System.Drawing.Size(385, 28);
+            this.txtAdd_addressProvider.Size = new System.Drawing.Size(230, 20);
             this.txtAdd_addressProvider.StyleController = this.layoutControl2;
             this.txtAdd_addressProvider.TabIndex = 6;
             // 
             // txtAdd_nameProvider
             // 
-            this.txtAdd_nameProvider.Location = new System.Drawing.Point(207, 44);
-            this.txtAdd_nameProvider.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAdd_nameProvider.Location = new System.Drawing.Point(144, 36);
             this.txtAdd_nameProvider.MenuManager = this.barManager1;
             this.txtAdd_nameProvider.Name = "txtAdd_nameProvider";
-            this.txtAdd_nameProvider.Size = new System.Drawing.Size(385, 28);
+            this.txtAdd_nameProvider.Size = new System.Drawing.Size(230, 20);
             this.txtAdd_nameProvider.StyleController = this.layoutControl2;
             this.txtAdd_nameProvider.TabIndex = 5;
             // 
             // txtAdd_idProvider
             // 
             this.txtAdd_idProvider.EditValue = "";
-            this.txtAdd_idProvider.Location = new System.Drawing.Point(207, 12);
-            this.txtAdd_idProvider.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAdd_idProvider.Location = new System.Drawing.Point(144, 12);
             this.txtAdd_idProvider.MenuManager = this.barManager1;
             this.txtAdd_idProvider.Name = "txtAdd_idProvider";
             this.txtAdd_idProvider.Properties.UseReadOnlyAppearance = false;
-            this.txtAdd_idProvider.Size = new System.Drawing.Size(385, 28);
+            this.txtAdd_idProvider.Size = new System.Drawing.Size(230, 20);
             this.txtAdd_idProvider.StyleController = this.layoutControl2;
             this.txtAdd_idProvider.TabIndex = 4;
             this.txtAdd_idProvider.Visible = false;
@@ -245,9 +220,10 @@
             this.emptySpaceItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(604, 299);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(386, 168);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -255,44 +231,53 @@
             this.layoutControlItem1.Control = this.txtAdd_idProvider;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(584, 32);
+            this.layoutControlItem1.Size = new System.Drawing.Size(366, 24);
             this.layoutControlItem1.Text = "Mã nhà cung cấp";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(192, 19);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(129, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 128);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 138);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(584, 151);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(366, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtAdd_nameProvider;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(584, 32);
+            this.layoutControlItem2.Size = new System.Drawing.Size(366, 24);
             this.layoutControlItem2.Text = "Tên nhà cung cấp";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(192, 19);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(129, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtAdd_addressProvider;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 64);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(584, 32);
+            this.layoutControlItem3.Size = new System.Drawing.Size(366, 24);
             this.layoutControlItem3.Text = "Địa chỉ nhà cung cấp";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(192, 19);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(129, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtAdd_phoneProvider;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(584, 32);
+            this.layoutControlItem4.Size = new System.Drawing.Size(366, 24);
             this.layoutControlItem4.Text = "Số điện thoại nhà cung cấp";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(192, 19);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(129, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnLuu;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(366, 42);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // ribbonPage2
             // 
@@ -311,54 +296,48 @@
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 34);
+            this.barDockControl1.Location = new System.Drawing.Point(0, 27);
             this.barDockControl1.Manager = this.toolbarFormManager1;
-            this.barDockControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl1.Size = new System.Drawing.Size(604, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 392);
+            this.barDockControl2.Location = new System.Drawing.Point(0, 194);
             this.barDockControl2.Manager = this.toolbarFormManager1;
-            this.barDockControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl2.Size = new System.Drawing.Size(604, 0);
+            this.barDockControl2.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 34);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 27);
             this.barDockControl3.Manager = this.toolbarFormManager1;
-            this.barDockControl3.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl3.Size = new System.Drawing.Size(0, 358);
+            this.barDockControl3.Size = new System.Drawing.Size(0, 167);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(604, 34);
+            this.barDockControl4.Location = new System.Drawing.Point(403, 27);
             this.barDockControl4.Manager = this.toolbarFormManager1;
-            this.barDockControl4.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl4.Size = new System.Drawing.Size(0, 358);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 167);
             // 
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 68);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(0, 27);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(604, 299);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(403, 167);
             this.fluentDesignFormContainer1.TabIndex = 13;
             // 
             // toolbarFormControl1
             // 
             this.toolbarFormControl1.Location = new System.Drawing.Point(0, 0);
             this.toolbarFormControl1.Manager = this.toolbarFormManager2;
-            this.toolbarFormControl1.Margin = new System.Windows.Forms.Padding(4);
             this.toolbarFormControl1.Name = "toolbarFormControl1";
-            this.toolbarFormControl1.Size = new System.Drawing.Size(604, 34);
+            this.toolbarFormControl1.Size = new System.Drawing.Size(403, 27);
             this.toolbarFormControl1.TabIndex = 23;
             this.toolbarFormControl1.TabStop = false;
             this.toolbarFormControl1.ToolbarForm = this;
@@ -375,43 +354,39 @@
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 34);
+            this.barDockControl5.Location = new System.Drawing.Point(0, 27);
             this.barDockControl5.Manager = this.toolbarFormManager2;
-            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl5.Size = new System.Drawing.Size(604, 0);
+            this.barDockControl5.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 392);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 194);
             this.barDockControl6.Manager = this.toolbarFormManager2;
-            this.barDockControl6.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl6.Size = new System.Drawing.Size(604, 0);
+            this.barDockControl6.Size = new System.Drawing.Size(403, 0);
             // 
             // barDockControl7
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl7.Location = new System.Drawing.Point(0, 34);
+            this.barDockControl7.Location = new System.Drawing.Point(0, 27);
             this.barDockControl7.Manager = this.toolbarFormManager2;
-            this.barDockControl7.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl7.Size = new System.Drawing.Size(0, 358);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 167);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(604, 34);
+            this.barDockControl8.Location = new System.Drawing.Point(403, 27);
             this.barDockControl8.Manager = this.toolbarFormManager2;
-            this.barDockControl8.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControl8.Size = new System.Drawing.Size(0, 358);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 167);
             // 
             // frmUpdateProvider
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 392);
+            this.ClientSize = new System.Drawing.Size(403, 194);
             this.Controls.Add(this.layoutControl2);
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.barDockControlLeft);
@@ -428,7 +403,6 @@
             this.Controls.Add(this.barDockControl5);
             this.Controls.Add(this.toolbarFormControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUpdateProvider";
             this.Text = "Thông tin nhà cung cấp";
             this.ToolbarFormControl = this.toolbarFormControl1;
@@ -446,6 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
@@ -457,10 +432,8 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem barbtnSaveAddProvider;
         private DevExpress.XtraBars.BarButtonItem barbtnExitAddProvider;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -489,5 +462,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl6;
         private DevExpress.XtraBars.BarDockControl barDockControl7;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

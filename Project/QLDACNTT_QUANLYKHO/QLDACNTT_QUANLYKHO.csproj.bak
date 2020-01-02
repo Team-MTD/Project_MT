@@ -50,16 +50,34 @@
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v19.1" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.1" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1" />
     <Reference Include="DevExpress.Sparkline.v19.1.Core" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.1" />
     <Reference Include="DevExpress.Printing.v19.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
@@ -79,15 +97,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectString.cs" />
-    <Compile Include="DataDemo.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataDemo.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Employee\frmEmployee.cs">
       <SubType>Form</SubType>
-      <CustomToolNamespace>frmEmployee</CustomToolNamespace>
     </Compile>
     <Compile Include="Employee\frmEmployee.Designer.cs">
       <DependentUpon>frmEmployee.cs</DependentUpon>
@@ -122,10 +133,17 @@
     <Compile Include="Provider\frmProvider.Designer.cs">
       <DependentUpon>frmProvider.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLKHODataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLKHODataSet.xsd</DependentUpon>
+    <Compile Include="Report\FluentDesignForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FluentDesignForm1.Designer.cs">
+      <DependentUpon>FluentDesignForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Reportfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Reportfrm.Designer.cs">
+      <DependentUpon>Reportfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock\frmAddStock.cs">
       <SubType>Form</SubType>
@@ -171,11 +189,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QUANLYKHO_DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QUANLYKHO_DataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Employee\frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Provider\frmProvider.resx">
       <DependentUpon>frmProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FluentDesignForm1.resx">
+      <DependentUpon>FluentDesignForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Reportfrm.resx">
+      <DependentUpon>Reportfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock\frmAddStock.resx">
       <DependentUpon>frmAddStock.cs</DependentUpon>
@@ -227,14 +246,8 @@
       <DependentUpon>frmStockReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <None Include="App.config" />
-    <None Include="DataDemo.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataDemo.designer.cs</LastGenOutput>
+    <None Include="App.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="DataDemo.dbml.layout">
-      <DependentUpon>DataDemo.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,28 +258,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLKHODataSet.xsc">
-      <DependentUpon>QLKHODataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKHODataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKHODataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKHODataSet.xss">
-      <DependentUpon>QLKHODataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QUANLYKHO_DataSet.xsc">
-      <DependentUpon>QUANLYKHO_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QUANLYKHO_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QUANLYKHO_DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QUANLYKHO_DataSet.xss">
-      <DependentUpon>QUANLYKHO_DataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -339,6 +330,38 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS_KHOHANG\BUS_KHOHANG.csproj">
+      <Project>{8c54e316-5fbc-4b35-bf86-cd9a0b60f290}</Project>
+      <Name>BUS_KHOHANG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO_Data\DTO_Data.csproj">
+      <Project>{5fe6ba74-2c11-4c70-a6bc-b16e7af8c2f1}</Project>
+      <Name>DTO_Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Provider\Provider.csproj">
+      <Project>{b3671754-6c56-4067-9910-dd3122650e4a}</Project>
+      <Name>Provider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveas3.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshpivottable.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
