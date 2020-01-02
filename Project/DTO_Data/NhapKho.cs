@@ -12,8 +12,8 @@ namespace DTO_Data
         public DateTime NgayNhap { get; set; }
         public int SoLuongNhap { get; set; }
         public string IdSanPham { get; set; }
-        public int IdNhanSu { get; set; }
-        public int IdNhaCungCap { get; set; }
+        public int? IdNhanSu { get; set; }
+        public int? IdNhaCungCap { get; set; }
         public string IdKho { get; set; }
 
         public NhapKho()

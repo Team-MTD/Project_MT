@@ -65,8 +65,8 @@ namespace QLDACNTT_QUANLYKHO
 
         public void Load_NguoiNhapKho()
         {
-            person = bus.Get_NhanVien().ToList();
-            foreach (var item in person)
+            var persons = bus.Get_NhanVien();
+            foreach (var item in persons)
             {
                 cboNguoi.Items.Add(item.tennhansu);
             }

@@ -25,7 +25,7 @@ namespace BUS_KHOHANG
             return nhacc;
         }
         // Load Nhan su
-        public IQueryable<NHANSU> Get_NhanVien()
+        public List<NHANSU> Get_NhanVien()
         {
             var nhanvien = data.Load_NhanVien();
             return nhanvien;
@@ -165,6 +165,16 @@ namespace BUS_KHOHANG
         {
             return data.AddNew_NhapKhos(list);
         }
+
+        public IQueryable<NHAPKHO> Load_PhieuNhap()
+        {
+            return data.Get_NhapKho();
+        }
+
+        public IQueryable<NHAPKHO> Load_PhieuNhap_Date(DateTime fromDate, DateTime toDate)
+        {
+            return data.Get_NhapKho_Date(fromDate,toDate);
+        }
         #endregion
 
 
@@ -177,6 +187,16 @@ namespace BUS_KHOHANG
         public bool Insert_XuatKho(IEnumerable<XUATKHO> list)
         {
             return data.AddNew_XuatKhos(list);
+        }
+
+        public IQueryable<XUATKHO> Load_PhieuXuat()
+        {
+            return data.Get_XuatKho();
+        }
+
+        public IQueryable<XUATKHO> Load_PhieuXuat_Date(DateTime fromDate,DateTime toDate)
+        {
+            return data.Get_XuatKho_Date(fromDate, toDate);
         }
         #endregion
 

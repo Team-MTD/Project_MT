@@ -797,3 +797,8 @@ C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\obj\Debug\QLDAC
 C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\obj\Debug\QLDACNTT_QUANLYKHO.csproj.CopyComplete
 C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\obj\Debug\QLDACNTT_QUANLYKHO.exe
 C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\obj\Debug\QLDACNTT_QUANLYKHO.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\bin\Debug\Telerik.WinControls.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\bin\Debug\Telerik.WinControls.UI.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\bin\Debug\TelerikCommon.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\bin\Debug\Telerik.WinControls.xml
+C:\Users\phamh\source\repos\Quanlykho\Project\QLDACNTT_QUANLYKHO\bin\Debug\Telerik.WinControls.UI.xml

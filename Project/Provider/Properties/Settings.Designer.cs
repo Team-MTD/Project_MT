@@ -36,11 +36,22 @@ namespace Provider.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L80PNMH\\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D5CHB5F\\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=" +
             "True")]
         public string QLKHOConnectionString {
             get {
                 return ((string)(this["QLKHOConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L80PNMH\\SQLEXPRESS;Initial Catalog=QLKHO;Integrated Security=" +
+            "True")]
+        public string QLKHOConnectionString1 {
+            get {
+                return ((string)(this["QLKHOConnectionString1"]));
             }
         }
     }

@@ -222,13 +222,13 @@ namespace DAL_KHOHANG
 
         /// NHAN SU
         /// 
-        public IQueryable<NHANSU> Load_NhanVien()
+        public List<NHANSU> Load_NhanVien()
         {
             ConnectDB connectDB=new ConnectDB();
             var linq = from item in connectDB.cnn.NHANSUs
                        select item;
-
-            return linq;
+            var x = linq.ToList();
+            return x;
         }
 
         public bool AddNew_NhanVien(NhanVien nhanVien)
@@ -243,7 +243,7 @@ namespace DAL_KHOHANG
                     dienthoai = nhanVien.DienThoai,
                     tennhansu = nhanVien.TenNhanVien,
                     email = nhanVien.Email,
-                    gioitinh = nhanVien.Gioitinh,
+                    gioitinh = nhanVien.Gioitinh=="Nam"?true:false,
                     chucvu = nhanVien.ChucVu,
                     ngayvaolam = nhanVien.NgayVaoLam  
                 };
@@ -272,7 +272,7 @@ namespace DAL_KHOHANG
                 sp.diachi = nhanVien.DiaChi;
                 sp.email = nhanVien.Email;
                 sp.chucvu = nhanVien.ChucVu;
-                sp.gioitinh = nhanVien.Gioitinh;
+                sp.gioitinh = nhanVien.Gioitinh == "Nam" ? true : false;
                 sp.ngayvaolam = nhanVien.NgayVaoLam;
                 connectDB.cnn.SubmitChanges();
                 return true;
@@ -552,9 +552,50 @@ namespace DAL_KHOHANG
 
         }
 
+
+        public IQueryable<NHAPKHO> Get_NhapKho()
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var data = from item in connectDB.cnn.NHAPKHOs
+                       select item;
+            return data;
+        }
+
+
+        public IQueryable<XUATKHO> Get_XuatKho()
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var data = from item in connectDB.cnn.XUATKHOs
+                       select item;
+            return data;
+        }
+
+
+        //Filter With Date
+        public IQueryable<NHAPKHO> Get_NhapKho_Date(DateTime fromDate,DateTime toDate)
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var data = from item in connectDB.cnn.NHAPKHOs
+                       where item.ngaynhapkho >= fromDate && item.ngaynhapkho<=toDate
+                       select item;
+            return data;
+        }
+
+
+        public IQueryable<XUATKHO> Get_XuatKho_Date(DateTime fromDate, DateTime toDate)
+        {
+            ConnectDB connectDB = new ConnectDB();
+            var data = from item in connectDB.cnn.XUATKHOs
+                       where item.ngayxuatkho >= fromDate && item.ngayxuatkho <= toDate
+                       select item;
+            return data;
+        }
+
+
         /// NHÂN SỰ
         public IQueryable<NHANSU> Load_Nhansu()
         {
+
             ConnectDB connectDB=new ConnectDB();
             var linq = from item in connectDB.cnn.NHANSUs
                        select item;
