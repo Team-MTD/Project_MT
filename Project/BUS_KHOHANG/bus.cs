@@ -166,12 +166,12 @@ namespace BUS_KHOHANG
             return data.AddNew_NhapKhos(list);
         }
 
-        public IQueryable<NHAPKHO> Load_PhieuNhap()
+        public IQueryable<SanPhamJoinNhapKho> Load_PhieuNhap()
         {
             return data.Get_NhapKho();
         }
 
-        public IQueryable<NHAPKHO> Load_PhieuNhap_Date(DateTime fromDate, DateTime toDate)
+        public IQueryable<SanPhamJoinNhapKho> Load_PhieuNhap_Date(DateTime fromDate, DateTime toDate)
         {
             return data.Get_NhapKho_Date(fromDate,toDate);
         }
@@ -189,12 +189,12 @@ namespace BUS_KHOHANG
             return data.AddNew_XuatKhos(list);
         }
 
-        public IQueryable<XUATKHO> Load_PhieuXuat()
+        public IQueryable<SanPhamJoinXuatKho> Load_PhieuXuat()
         {
             return data.Get_XuatKho();
         }
 
-        public IQueryable<XUATKHO> Load_PhieuXuat_Date(DateTime fromDate,DateTime toDate)
+        public IQueryable<SanPhamJoinXuatKho> Load_PhieuXuat_Date(DateTime fromDate,DateTime toDate)
         {
             return data.Get_XuatKho_Date(fromDate, toDate);
         }

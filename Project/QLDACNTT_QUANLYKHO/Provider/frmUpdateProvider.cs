@@ -59,44 +59,53 @@ namespace QLDACNTT_QUANLYKHO
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtAdd_nameProvider.Text != "" && txtAdd_addressProvider.Text != "" && txtAdd_phoneProvider.Text != "")
+            //Kiểm tra số điện thoại đủ 11 số
+            if (txtAdd_phoneProvider.Text.Length > 11)
             {
-                var nhacc = new NhaCC()
+                XtraMessageBox.Show("Số điện thoại không được nhiều hơn 11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (txtAdd_nameProvider.Text != "" && txtAdd_addressProvider.Text != "" && txtAdd_phoneProvider.Text != "")
                 {
-                    idNhaCC = Convert.ToInt32(txtAdd_idProvider.Text),
-                    DiaChiNhaCC = txtAdd_addressProvider.Text,
-                    PhoneNhaCC = txtAdd_phoneProvider.Text,
-                    TenNhaCC = txtAdd_nameProvider.Text
-                };
-
-                // Kiểm tra nếu nhà cung cấp tồn tại:
-                if (func.KiemtraNhaCC(nhacc.idNhaCC) != null)
-                {
-                    // Cập nhật lại thông tin nhà cung cấp
-                    if (func.Update_NhaCC(nhacc))
+                    var nhacc = new NhaCC()
                     {
-                        XtraMessageBox.Show("Cập nhật nhà cung cấp thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        idNhaCC = Convert.ToInt32(txtAdd_idProvider.Text.Trim()),
+                        DiaChiNhaCC = txtAdd_addressProvider.Text,
+                        PhoneNhaCC = txtAdd_phoneProvider.Text,
+                        TenNhaCC = txtAdd_nameProvider.Text
+                    };
+
+                    // Kiểm tra nếu nhà cung cấp tồn tại:
+                    if (func.KiemtraNhaCC(nhacc.idNhaCC).ToList().Count > 0)
+                    {
+                        // Cập nhật lại thông tin nhà cung cấp
+                        if (func.Update_NhaCC(nhacc))
+                        {
+                            XtraMessageBox.Show("Cập nhật nhà cung cấp thành công ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Có vấn đề trong quá trình cập nhật ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        XtraMessageBox.Show("Có vấn đề trong quá trình cập nhật ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    // Tạo mới một nhà cung cấp
-                    if (func.Insert_NhaCC(nhacc))
-                    {
-                        XtraMessageBox.Show("Đã thêm thành công nhà cung cấp: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Lỗi: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Tạo mới một nhà cung cấp
+                        if (func.Insert_NhaCC(nhacc))
+                        {
+                            XtraMessageBox.Show("Đã thêm thành công nhà cung cấp: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Lỗi: ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        }
                     }
                 }
             }
-            this.Close();
         }
     }
 }

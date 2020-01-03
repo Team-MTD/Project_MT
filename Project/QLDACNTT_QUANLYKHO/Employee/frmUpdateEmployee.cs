@@ -20,7 +20,7 @@ namespace QLDACNTT_QUANLYKHO.Employee
         {
             InitializeComponent();
         }
-        
+
         #region // Methods of form
         public void showData(NhanVien proz)
         {
@@ -36,7 +36,7 @@ namespace QLDACNTT_QUANLYKHO.Employee
         #endregion
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
         }
         public bool isAdd = true;
         public int Id = -1;
@@ -55,7 +55,7 @@ namespace QLDACNTT_QUANLYKHO.Employee
         {
 
         }
-        
+
         private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -63,15 +63,15 @@ namespace QLDACNTT_QUANLYKHO.Employee
 
         private void frmUpdateEmployee_Load(object sender, EventArgs e)
         {
-                // TODO: This line of code loads data into the 'qLKHODataSet.NHANSU' table. You can move, or remove it, as needed.
-                //this.nHANSUTableAdapter.Fill(this.qLKHODataSet.NHANSU);
+            // TODO: This line of code loads data into the 'qLKHODataSet.NHANSU' table. You can move, or remove it, as needed.
+            //this.nHANSUTableAdapter.Fill(this.qLKHODataSet.NHANSU);
 
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-                
-            
+
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -79,19 +79,19 @@ namespace QLDACNTT_QUANLYKHO.Employee
             if (txtIdEmployee.Text != "" && txtNameEmployee.Text != "" && txtPhoneEployee.Text != ""
                 && txtAddressEmployee.Text != "" && txtChucvu.Text != "")
             {
-                var nhanvien = new NhanVien()
+                var nhanvien = new NhanVien
                 {
                     IdNhanVien = Convert.ToInt32(txtIdEmployee.Text),
                     TenNhanVien = txtNameEmployee.Text,
                     DiaChi = txtAddressEmployee.Text,
                     DienThoai = txtPhoneEployee.Text,
                     ChucVu = txtChucvu.Text,
-                    Gioitinh = cboGioitinh.SelectedValue.ToString(),
                     Email = txtEmailEmployee.Text,
-                    NgayVaoLam = ngayvaolam.DateTime,
+                    Gioitinh= cboGioitinh.SelectedItem.ToString(),
+                    NgayVaoLam= ngayvaolam.DateTime
                 };
                 // Kiểm tra nếu nhân viên tồn tại:
-                if (func.KiemtraNhanVien(nhanvien.IdNhanVien) != null)
+                if (func.KiemtraNhanVien(nhanvien.IdNhanVien).ToList().Count>0)
                 {
                     // Cập nhật lại thông tin nhân viên
                     if (func.Update_NhanVien(nhanvien))
@@ -119,5 +119,5 @@ namespace QLDACNTT_QUANLYKHO.Employee
             }
             this.Close();
         }
-    } 
+    }
 }

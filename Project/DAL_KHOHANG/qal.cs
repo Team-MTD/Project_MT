@@ -111,7 +111,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 SANPHAM sp = connectDB.cnn.SANPHAMs.Single(item => item.idsanpham == masp);
                 connectDB.cnn.SANPHAMs.DeleteOnSubmit(sp);
                 connectDB.cnn.SubmitChanges();
@@ -129,7 +129,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 var linq = from item in connectDB.cnn.SANPHAMs
                            where product.IdSanPham.Equals(item.idsanpham)
                            select item;
@@ -224,7 +224,7 @@ namespace DAL_KHOHANG
         /// 
         public List<NHANSU> Load_NhanVien()
         {
-            ConnectDB connectDB=new ConnectDB();
+            ConnectDB connectDB = new ConnectDB();
             var linq = from item in connectDB.cnn.NHANSUs
                        select item;
             var x = linq.ToList();
@@ -235,7 +235,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 NHANSU prov = new NHANSU()
                 {
                     idnhansu = nhanVien.IdNhanVien,
@@ -243,9 +243,9 @@ namespace DAL_KHOHANG
                     dienthoai = nhanVien.DienThoai,
                     tennhansu = nhanVien.TenNhanVien,
                     email = nhanVien.Email,
-                    gioitinh = nhanVien.Gioitinh=="Nam"?true:false,
+                    gioitinh = nhanVien.Gioitinh == "Nam" ? true : false,
                     chucvu = nhanVien.ChucVu,
-                    ngayvaolam = nhanVien.NgayVaoLam  
+                    ngayvaolam = nhanVien.NgayVaoLam
                 };
                 connectDB.cnn.NHANSUs.InsertOnSubmit(prov);
                 connectDB.cnn.SubmitChanges();
@@ -264,7 +264,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 NHANSU sp = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == nhanVien.IdNhanVien);
                 sp.idnhansu = sp.idnhansu;
                 sp.tennhansu = nhanVien.TenNhanVien;
@@ -288,7 +288,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 NHANSU nhanvien = connectDB.cnn.NHANSUs.Single(item => item.idnhansu == manhanVien);
                 connectDB.cnn.NHANSUs.DeleteOnSubmit(nhanvien);
                 connectDB.cnn.SubmitChanges();
@@ -306,7 +306,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 var data = from item in connectDB.cnn.NHANSUs
                            where item.idnhansu == id
                            select item;
@@ -364,12 +364,13 @@ namespace DAL_KHOHANG
                 sp.sdtnhacungcap = prov.PhoneNhaCC;
                 sp.diachinhacungcap = prov.DiaChiNhaCC;
                 connectDB.cnn.SubmitChanges();
+
                 return true;
             }
             catch (Exception)
             {
-                return false;
                 throw;
+                return false;
             }
         }
 
@@ -399,7 +400,7 @@ namespace DAL_KHOHANG
                 var data = from item in connectDB.cnn.PROVIDERs
                            where item.idnhacungcap == id
                            select item;
-                return data != null ? data : null;
+                return data;
             }
             catch (Exception)
             {
@@ -416,7 +417,7 @@ namespace DAL_KHOHANG
             try
             {
 
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 NHAPKHO pro = new NHAPKHO
                 {
                     idphieunhap = product.IdPhieuNhap,
@@ -443,7 +444,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 var data = from item in connectDB.cnn.XUATKHOs
                            select item;
                 string maN = "";
@@ -480,7 +481,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 var data = from item in connectDB.cnn.NHAPKHOs
                            select item;
                 string maN = "";
@@ -553,42 +554,62 @@ namespace DAL_KHOHANG
         }
 
 
-        public IQueryable<NHAPKHO> Get_NhapKho()
+        public IQueryable<SanPhamJoinNhapKho> Get_NhapKho()
         {
             ConnectDB connectDB = new ConnectDB();
-            var data = from item in connectDB.cnn.NHAPKHOs
-                       select item;
-            return data;
+            return (from item in connectDB.cnn.NHAPKHOs
+                    join product in connectDB.cnn.SANPHAMs
+                    on item.idsanpham equals product.idsanpham
+                    select new SanPhamJoinNhapKho
+                    {
+                        nhapkho = item,
+                        sanpham = product
+                    });
         }
 
 
-        public IQueryable<XUATKHO> Get_XuatKho()
+        public IQueryable<SanPhamJoinXuatKho> Get_XuatKho()
         {
             ConnectDB connectDB = new ConnectDB();
-            var data = from item in connectDB.cnn.XUATKHOs
-                       select item;
-            return data;
+            return (from item in connectDB.cnn.XUATKHOs
+                    join product in connectDB.cnn.SANPHAMs
+                    on item.idsanpham equals product.idsanpham
+                    select new SanPhamJoinXuatKho
+                    {
+                        xuatkho = item,
+                        sanpham = product
+                    });
         }
 
 
         //Filter With Date
-        public IQueryable<NHAPKHO> Get_NhapKho_Date(DateTime fromDate,DateTime toDate)
+        public IQueryable<SanPhamJoinNhapKho> Get_NhapKho_Date(DateTime fromDate, DateTime toDate)
         {
             ConnectDB connectDB = new ConnectDB();
-            var data = from item in connectDB.cnn.NHAPKHOs
-                       where item.ngaynhapkho >= fromDate && item.ngaynhapkho<=toDate
-                       select item;
-            return data;
+            return (from item in connectDB.cnn.NHAPKHOs
+                    join product in connectDB.cnn.SANPHAMs
+                    on item.idsanpham equals product.idsanpham
+                    where item.ngaynhapkho >= fromDate && item.ngaynhapkho <= toDate
+                    select new SanPhamJoinNhapKho
+                    {
+                        nhapkho = item,
+                        sanpham = product
+                    });
         }
 
 
-        public IQueryable<XUATKHO> Get_XuatKho_Date(DateTime fromDate, DateTime toDate)
+        public IQueryable<SanPhamJoinXuatKho> Get_XuatKho_Date(DateTime fromDate, DateTime toDate)
         {
             ConnectDB connectDB = new ConnectDB();
-            var data = from item in connectDB.cnn.XUATKHOs
-                       where item.ngayxuatkho >= fromDate && item.ngayxuatkho <= toDate
-                       select item;
-            return data;
+            return (from item in connectDB.cnn.XUATKHOs
+                    join product in connectDB.cnn.SANPHAMs
+                    on item.idsanpham equals product.idsanpham
+                    where item.ngayxuatkho >= fromDate && item.ngayxuatkho <= toDate
+                    select new SanPhamJoinXuatKho
+                    {
+                        xuatkho = item,
+                        sanpham = product
+                    });
         }
 
 
@@ -596,7 +617,7 @@ namespace DAL_KHOHANG
         public IQueryable<NHANSU> Load_Nhansu()
         {
 
-            ConnectDB connectDB=new ConnectDB();
+            ConnectDB connectDB = new ConnectDB();
             var linq = from item in connectDB.cnn.NHANSUs
                        select item;
             return linq;
@@ -607,7 +628,7 @@ namespace DAL_KHOHANG
         // KHO
         public IQueryable<KHO> Load_ChiTietKho()
         {
-            ConnectDB connectDB=new ConnectDB();
+            ConnectDB connectDB = new ConnectDB();
             var linq = from item in connectDB.cnn.KHOs
                        select item;
             return linq;
@@ -619,7 +640,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 connectDB.cnn.NHAPKHOs.InsertAllOnSubmit(list);
                 connectDB.cnn.SubmitChanges();
                 return true;
@@ -635,7 +656,7 @@ namespace DAL_KHOHANG
         {
             try
             {
-                ConnectDB connectDB=new ConnectDB();
+                ConnectDB connectDB = new ConnectDB();
                 connectDB.cnn.XUATKHOs.InsertAllOnSubmit(list);
                 connectDB.cnn.SubmitChanges();
                 return true;

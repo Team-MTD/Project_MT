@@ -16,6 +16,7 @@ namespace DTO_Data
             public string DiaChi { get; set; }
             public string Email { get; set; }
             public DateTime NgayVaoLam { get; set; }
+
             public NhanVien()
             {
 

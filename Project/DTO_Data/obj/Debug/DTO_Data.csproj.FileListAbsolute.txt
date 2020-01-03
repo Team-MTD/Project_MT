@@ -15,3 +15,7 @@ C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csproj
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csproj.CoreCompileInputs.cache
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.dll
 C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\bin\Debug\Provider.dll
+C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\bin\Debug\Provider.pdb
+C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\bin\Debug\Provider.dll.config
+C:\Users\phamh\source\repos\Quanlykho\Project\DTO_Data\obj\Debug\DTO_Data.csproj.CopyComplete

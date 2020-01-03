@@ -51,39 +51,39 @@ namespace QLDACNTT_QUANLYKHO.Report
 
         
         // sửa lại dữ liệu để hiển thị
-        public List<NhapKho> Fixed_Data_PhieuNhap(IQueryable<NHAPKHO> par)
+        public List<NhapKho> Fixed_Data_PhieuNhap(IQueryable<SanPhamJoinNhapKho> par)
         {
             List<NhapKho> lstNhapKho = new List<NhapKho>();
             foreach (var item in par.ToList())
             {
                 NhapKho nk = new NhapKho
                 {
-                    IdKho = item.idkho,
-                    IdNhaCungCap = item.idnhacungcap,
-                    IdNhanSu = item.idnhansu,
-                    IdPhieuNhap = item.idphieunhap,
-                    IdSanPham = item.idsanpham,
-                    NgayNhap = item.ngaynhapkho,
-                    SoLuongNhap = item.soluongnhap
+                    IdKho = item.nhapkho.idkho,
+                    IdNhaCungCap = item.nhapkho.idnhacungcap,
+                    IdNhanSu = item.nhapkho.idnhansu,
+                    IdPhieuNhap = item.nhapkho.idphieunhap,
+                    IdSanPham = item.sanpham.tensanpham,
+                    NgayNhap = item.nhapkho.ngaynhapkho,
+                    SoLuongNhap = item.nhapkho.soluongnhap
                 };
                 lstNhapKho.Add(nk);
             }
             return lstNhapKho;
         }
 
-        public List<XuatKho> Fixed_Data_PhieuXuat(IQueryable<XUATKHO> par)
+        public List<XuatKho> Fixed_Data_PhieuXuat(IQueryable<SanPhamJoinXuatKho> par)
         {
             List<XuatKho> lstNhapKho = new List<XuatKho>();
             foreach (var item in par.ToList())
             {
                 XuatKho nk = new XuatKho
                 {
-                    IdKho = item.idkho,
-                    IdNhanSu = item.idnhansu,
-                    IdSanPham = item.idsanpham,
-                    NgayXuat = item.ngayxuatkho,
-                    SoLuongXuat = item.soluongxuat,
-                    IdPhieuXuat=item.idphieuxuat,
+                    IdKho = item.xuatkho.idkho,
+                    IdNhanSu = item.xuatkho.idnhansu,
+                    IdPhieuXuat = item.xuatkho.idphieuxuat,
+                    IdSanPham = item.sanpham.tensanpham,
+                    NgayXuat = item.xuatkho.ngayxuatkho,
+                    SoLuongXuat = item.xuatkho.soluongxuat
                 };
                 lstNhapKho.Add(nk);
             }
